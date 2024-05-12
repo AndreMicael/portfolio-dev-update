@@ -10,14 +10,14 @@ import "bulma/css/bulma.css";
 
 
 
-// import Grids from './Grids/Grids';
+import Grids from './Grids/Grids';
 
 function App() {
   return (
    
     <div className="App">
     <ParticlesComponent  id="particles" />     
-    {/* <Grids/>  */}   
+    <Grids/>    
       <Navbar />
       <Home />
       <About />
