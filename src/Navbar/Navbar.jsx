@@ -12,7 +12,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="http://">
+          <a className="navbar-item" href="http://localhost:3000/">
           André<span className="green-style">.dev</span></a>
 
       {/* Menu hamburger
@@ -21,7 +21,7 @@ const Navbar = () => {
       
       Quando ativo, o hamburger vira um X e o menu é exibido.
       */}
-          <a href='http://'
+          <span 
             role="button"
             onClick={handleBurgerClick}
             className={`navbar-burger ${isActive ? 'is-active' : ''}`}
@@ -33,7 +33,7 @@ const Navbar = () => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
-          </a>
+          </span>
         </div>
 
         <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active absoluto' : ''}`}>

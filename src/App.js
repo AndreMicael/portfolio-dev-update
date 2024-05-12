@@ -5,7 +5,7 @@ import "bulma/css/bulma.css";
 import ParticlesComponent from './components/particles';
 
 
-import Grids from './Grids/Grids';
+// import Grids from './Grids/Grids';
 
 function App() {
   return (
@@ -13,8 +13,7 @@ function App() {
     <div className="App">
     <ParticlesComponent  id="particles" />
      
-    <Grids/>
-  
+    {/* <Grids/>  */}
    
       <Navbar />
       <Home />

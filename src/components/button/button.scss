@@ -14,7 +14,29 @@ $branco: #D1D1D1;
 
     }
 
-    img {
+    span {
         margin-right: 5%;
+  
     }
 }
+
+.button-mockup:hover{
+    background-color: transparent !important; ;
+    border: 2px solid $verde ;
+    p{
+        color: $verde;
+        
+    }
+    img {
+        fill: $verde !important;
+    }
+}
+
+
+.icon:hover svg {
+    fill: $verde; 
+  }
+  
+  .icon-button.hovered .icon svg {
+    fill: $verde; 
+  }
