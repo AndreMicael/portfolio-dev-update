@@ -1,0 +1,20 @@
+$verde: #23CE99; 
+$preto: #252527;
+$branco: #D1D1D1;
+
+.button-mockup{
+    background-color: $verde !important;
+    width: 8rem !important;
+    
+
+    p{
+        color: $preto;
+        margin-left: 5%;
+
+
+    }
+
+    img {
+        margin-right: 5%;
+    }
+}
