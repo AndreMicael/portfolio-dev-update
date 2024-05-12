@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="#">
           André<span className="green-style">.dev</span>
