@@ -1,21 +1,13 @@
 @use '../variables.scss';
 
-.about-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 35vh;   // Alterado de 'height' para 'min-height'
-    padding: 0 20px;
 
-   
-}
 
 
 //Controla o container em que está o texto e a imagem
 .about-text-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 85vw;
   
 
     p {

@@ -22,6 +22,7 @@ $branco: #D1D1D1;
     position: absolute;
     top: 80px;
     right: 0;
+  
 }
 
 
@@ -29,15 +30,58 @@ $branco: #D1D1D1;
 
     padding: 0 20px;
     height: 80px;
+    
     background-color: hsla(0, 0%, 100%, 0) !important;
 }
 
-.fill {
-    background-color: $verde !important;
+.navbar-active{
+    padding: 0 20px;
+    height: 80px;
+    background-color: $verde !important;  
+    animation: fadeIn 0.5s;
+    position: fixed;
+    z-index: 900000;
+    width: 100vw;
+
+    .navbar-item p{
+        background-color: $preto;
+        border-radius: 5px;
+        padding: 0 10px;
+    }
+
+
+    .navbar-burger > * {
+        background-color: $preto !important; 
+        
+       
+    } 
+
+    .absoluto {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #000;
+        font-weight: bolder;
+
+       
+
+        .button{
+
+            background: $verde !important;
+            font-weight: bolder !important;
+        
+        }
+
+    }
+    
+
+    
 }
 
+
+
 .navbar-burger > * {
-    background-color: $verde !important; /* Substitua $verde pela sua cor desejada */
+    background-color: $verde !important; 
     
    
 } 
@@ -45,7 +89,6 @@ $branco: #D1D1D1;
 
 background-color: transparent !important;
 transform: scale(2);
-
 width: 50px !important;
 
 }

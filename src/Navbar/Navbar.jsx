@@ -1,19 +1,21 @@
 import React, { useState } from 'react'; // Importando corretamente o hook useState
 import './navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({action}) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleBurgerClick = () => {
     setIsActive(!isActive);
   };
 
+
+
   return (
     <div>
-      <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
+      <nav className={`${action ?'navbar-active':'navbar'} is-transparent`} role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="http://localhost:3000/">
-          André<span className="green-style">.dev</span></a>
+          <p>André<span className="green-style">.dev</span></p></a>
 
       {/* Menu hamburger
       Foi colocada uma função handleBurgerClick 
@@ -33,6 +35,10 @@ const Navbar = () => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
+         
+            
+
+            
           </span>
         </div>
 

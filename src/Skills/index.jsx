@@ -3,11 +3,12 @@ import "./skills.scss";
 
 const Skills = () => {
   return (
-    <div className="skills-container">
+    <div className="categories-container">
     
       <h1 className="categories">skills</h1>
     
       <div className="icons-skills">
+        
        <div className="icon-sk"><i className="fab fa-html5"> </i> <p>html5</p> </div> 
         <div className="icon-sk"><i className="fab fa-css3-alt"> </i> <p>css3</p></div>
         <div className="icon-sk"><i className="fab fa-js-square">  </i> <p>javascript</p> </div>       
