@@ -3,7 +3,7 @@ import Sketch from 'react-p5';
 
 function P5Sketch() {
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(500, 400).parent(canvasParentRef);
+        p5.createCanvas(430, 920).parent(canvasParentRef);
     }
 
     const draw = (p5) => {

@@ -26,8 +26,11 @@ $branco: #D1D1D1;
 
 
 .navbar {
+
+    padding: 0 20px;
+    height: 80px;
     background-color: hsla(0, 0%, 100%, 0) !important;
-  }
+}
 
 .fill {
     background-color: $verde !important;
