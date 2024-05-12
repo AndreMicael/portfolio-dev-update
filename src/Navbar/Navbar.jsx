@@ -12,9 +12,8 @@ const Navbar = () => {
     <div>
       <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="#">
-          André<span className="green-style">.dev</span>
-          </a>
+          <a className="navbar-item" href="http://">
+          André<span className="green-style">.dev</span></a>
 
       {/* Menu hamburger
       Foi colocada uma função handleBurgerClick 
@@ -22,7 +21,7 @@ const Navbar = () => {
       
       Quando ativo, o hamburger vira um X e o menu é exibido.
       */}
-          <a
+          <a href='http://'
             role="button"
             onClick={handleBurgerClick}
             className={`navbar-burger ${isActive ? 'is-active' : ''}`}
@@ -39,20 +38,20 @@ const Navbar = () => {
 
         <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active absoluto' : ''}`}>
           <div className="navbar-start">
-            <a className="navbar-item">Home</a>
-            <a className="navbar-item">Sobre</a>
-            <a className="navbar-item">Habilidades</a>
-            <a className="navbar-item">Projetos</a>
-            <a className="navbar-item">Contato</a>
+            <a href="http://" className="navbar-item">Home</a>
+            <a href="http://" className="navbar-item">Sobre</a>
+            <a href="http://" className="navbar-item">Habilidades</a>
+            <a href="http://" className="navbar-item">Projetos</a>
+            <a href="http://" className="navbar-item">Contato</a>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-primary">
+                <a href="http://" className="button is-primary">
                   <strong>Currículo</strong>
                 </a>
-                <a className="button is-primary">GitHub</a>
+                <a href="http://" className="button is-primary">GitHub</a>
               </div>
             </div>
           </div>
