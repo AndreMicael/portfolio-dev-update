@@ -1,0 +1,13 @@
+$verde: #23CE99; 
+$preto: #252527;
+$branco: #D1D1D1;
+
+.navbar--container{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;   
+    color: #fff;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
