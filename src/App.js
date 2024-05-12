@@ -1,5 +1,6 @@
 import Navbar from './Navbar/Navbar';
 import './App.scss';
+import "bulma/css/bulma.css";
 
 function App() {
   return (
