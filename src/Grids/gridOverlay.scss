@@ -1,0 +1,18 @@
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 25px; /* Margem esquerda */
+  right: 25px; /* Margem direita */
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 4 colunas */
+  gap: 20px; /* Espaçamento entre os grids */
+  align-items: stretch; /* Esticar os itens para preencher toda a altura da célula */
+  height: 100vh;
+  z-index: 100000;
+}
+
+.grid-item {
+  background-color: rgba(237, 0, 0, 0.1); /* Cor de fundo com transparência */
+
+  text-align: center; /* Alinhamento de texto */
+}
