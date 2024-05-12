@@ -8,7 +8,7 @@ function App() {
   return (
    
     <div className="App">
-    <Grids/>
+    {/* <Grids/> */}
      
       <Navbar />
      Olá Mundo3

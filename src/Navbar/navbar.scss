@@ -2,18 +2,52 @@ $verde: #23CE99;
 $preto: #252527;
 $branco: #D1D1D1;
 
+
+
 .green-style {
     color: $verde;
     
 }
 
-.navbar-item {
-    font-size: 1.4rem;
+.navbar-brand {
+    font-size: 2.2rem;
+    margin-top: 2%;
+}
+
+.navbar-start {
+    font-size: 1.2rem !important;
 }
 
 .absoluto {
     position: absolute;
-    top: 50px;
+    top: 80px;
     right: 0;
 }
+
+
+.navbar {
+
+    padding: 0 20px;
+    height: 80px;
+}
+
+.fill {
+    background-color: $verde !important;
+}
+
+.navbar-burger > * {
+    background-color: $verde !important; /* Substitua $verde pela sua cor desejada */
+    
+   
+} 
+.navbar-burger{
+
+background-color: transparent !important;
+transform: scale(2);
+
+width: 50px !important;
+
+}
+
+
 

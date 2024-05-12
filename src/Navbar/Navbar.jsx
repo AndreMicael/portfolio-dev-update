@@ -13,7 +13,7 @@ const Navbar = () => {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="#">
-            Andre<span className="green-style">.dev</span>
+          André<span className="green-style">.dev</span>
           </a>
 
       {/* Menu hamburger
@@ -50,9 +50,9 @@ const Navbar = () => {
             <div className="navbar-item">
               <div className="buttons">
                 <a className="button is-primary">
-                  <strong>Sign up</strong>
+                  <strong>Currículo</strong>
                 </a>
-                <a className="button is-light">Log in</a>
+                <a className="button is-primary">GitHub</a>
               </div>
             </div>
           </div>
