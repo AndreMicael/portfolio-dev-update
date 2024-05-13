@@ -36,31 +36,68 @@ $branco: #D1D1D1;
 
 .navbar-active{
     padding: 0 20px;
-    height: 80px;
-    background-color: $verde !important;  
+    height: 60px;        
+    backdrop-filter: blur(100px);   
+    background-color: $branco;
     animation: fadeIn 0.5s;
+    border-radius: 100px !important;    
     position: fixed;
     z-index: 900000;
-    width: 100vw;
+    width: 80vw;
+    left: 50%;   
+    transform: translate(-50%, 25%);
+   
+   
+  
 
     .navbar-item p{
-        background-color: $preto;
-        border-radius: 5px;
-        padding: 0 10px;
+        
+        
+        padding: 0 10px;      
+        font-size: 1.3rem;
+        font-weight: bolder;
+        color: $preto;
+     
+        
     }
-
+    .navbar-item span {
+         
+    }	
 
     .navbar-burger > * {
-        background-color: $preto !important; 
+       background-color: $preto !important; 
+        
         
        
     } 
 
+    .navbar-brand {
+       
+        height: 60px ;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: space-around;
+    }
+    .navbar-burger {
+         
+        
+         margin: 0;
+         padding: 0;
+         transform: scale(1.2);
+         
+         
+
+    }
+
     .absoluto {
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background-color: #000;
+        position: sticky;
+        margin-top: 10px;         
+        
+        background-color: rgba($color: #000000, $alpha: 0.85);
+        backdrop-filter: blur(100px);
+        border-radius: 20px !important;    
+        z-index: 0;
         font-weight: bolder;
 
        
