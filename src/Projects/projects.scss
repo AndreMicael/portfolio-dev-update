@@ -1,0 +1,121 @@
+@use '../variables.scss';
+
+.projetos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85vw;
+    border: 2px solid variables.$verde;
+    color: variables.$verde;
+    border-radius: 5px;
+    
+    
+ 
+    .project-img, .project-desc{
+        
+        color: variables.$branco;
+        border-radius: 5px;
+        width: 100%;
+        display: flex;
+       
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        max-height: 20vh;
+        line-height: 1rem;
+        text-align: justify;
+    }
+
+    
+
+}
+
+.project-buttons{
+    display: flex;
+    justify-content: space-around;
+  
+  
+}
+
+.stacks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    padding: 5px 10px;
+    border: 2px solid variables.$verde;
+    color: variables.$verde;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin: 3% 0;
+    overflow: hidden;
+    max-width: 85vw;
+}
+
+.tecnologias {
+    color: variables.$branco;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.inativo {
+    display: none;
+   
+}
+
+.ativo {
+    display: grid;
+    grid-template-rows: 1fr;
+    row-gap: 5%;
+    opacity: 1;
+    transform: translateY(0);
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    margin-bottom: 25%;
+  
+ 
+}
+
+.ver-mais{
+    position: sticky !important;   
+    padding-top: 20px;
+    
+}
+
+
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.mockups {
+    display: grid;
+    grid-template-rows: 1fr;
+    row-gap: 5%;
+   
+}
+
+button i { 
+    font-size: 2rem;
+    color: variables.$verde;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    padding: 5px;    
+    width: 100vw;
+}
