@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-bulma": "sass --load-path=node_modules my-bulma-project.scss my-bulma-project.css",
+    "start": "npm run build-bulma -- --watch"
   },
   "eslintConfig": {
     "extends": [

@@ -7,6 +7,7 @@ import ParticlesComponent from './components/particles';
 import Skills from './Skills';
 // import Grids from './Grids/Grids';
 import Projects from './Projects';
+import Contact from './Contact';
 
 // Estilos
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -56,6 +57,7 @@ useEffect(function(){
       <About />
       <Skills/>
       <Projects/>
+      <Contact/>  
 
  
   
