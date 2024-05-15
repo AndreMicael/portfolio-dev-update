@@ -8,10 +8,10 @@ const Footer = () => {
 
        <div className="footer-menu">
        <ul>
-        <li>Sobre Mim</li>
-        <li>Habilidades</li>
-        <li>Projetos</li>
-        <li>Experiências</li>
+        <li><a href="http://">Sobre Mim</a></li>
+        <li><a href="http://">Habilidades</a></li>
+        <li><a href="http://">Projetos</a></li>
+        <li><a href="http://">Experiências</a></li>
         </ul> 
 
         <hr/>
