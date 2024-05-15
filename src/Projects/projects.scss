@@ -8,6 +8,7 @@
     border: 2px solid variables.$verde;
     color: variables.$verde;
     border-radius: 5px;
+    background-color: rgba($color: #000, $alpha: 0.4);
     
     
  
@@ -16,14 +17,14 @@
         color: variables.$branco;
         border-radius: 5px;
         width: 100%;
-        display: flex;
-       
+        display: flex;       
         justify-content: center;
         align-items: center;
         padding: 10px;
         max-height: 20vh;
         line-height: 1rem;
         text-align: justify;
+        
     }
 
     
@@ -50,6 +51,7 @@
     margin: 3% 0;
     overflow: hidden;
     max-width: 85vw;
+    background-color: rgba($color: #000, $alpha: 0.4);
 }
 
 .tecnologias {
@@ -70,8 +72,11 @@
 
 .inativo {
     display: none;
+
+   
    
 }
+
 
 .ativo {
     display: grid;
@@ -80,16 +85,24 @@
     opacity: 1;
     transform: translateY(0);
     animation: myAnim 1s ease 0s 1 normal forwards;
-    margin-bottom: 25%;
-  
- 
-}
-
-.ver-mais{
-    position: sticky !important;   
-    padding-top: 20px;
     
 }
+
+
+
+.ver-mais{
+    
+    padding-top: 20px;
+    margin-bottom: -5%;
+      
+}
+
+.ver-mais-button{
+    margin-top: 25%;
+}
+
+
+
 
 
 

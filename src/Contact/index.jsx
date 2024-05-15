@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="field">
  
             <div className="control has-icons-left has-icons-right">
-            <input className="input is-primary" type="text" placeholder="Nome Completo"/>
+            <input className="input form-contato is-primary" type="text" placeholder="Nome completo"/>
             <span className="icon is-small is-left">
             <i className="fas fa-user"></i>
             </span>
@@ -22,7 +22,7 @@ const Contact = () => {
 <div className="field">
 
   <div className="control has-icons-left has-icons-right">
-    <input className="input is-primary" type="email" placeholder="Insira seu e-mail" />
+    <input className="input form-contato is-primary" type="email" placeholder="Insira seu e-mail" />
     <span className="icon is-small is-left">
       <i className="fas fa-envelope"></i>
     </span>
@@ -38,7 +38,7 @@ const Contact = () => {
 <div className="field">
 
   <div className="control">
-    <textarea className="textarea is-primary" placeholder="Deixa aqui sua mensagem!"></textarea>
+    <textarea className="textarea form-contato is-primary" placeholder="Deixa aqui sua mensagem!"></textarea>
   </div>
 </div>
 

@@ -8,7 +8,7 @@ const ProjectMockup = ({desc,img,stack}) => {
   return (
     <div>
         <div className="projetos-container">
-            <div className="project-img"> <img src={img} /> </div>
+            <div className="project-img"> <img src={img} alt={desc}/> </div>
             <div className="project-desc"> {desc}  </div>
         </div>
         <div className="stacks"><p>TECNOLOGIAS USADAS:</p>
