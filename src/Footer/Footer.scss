@@ -1,0 +1,77 @@
+@use '../variables.scss';
+
+
+
+
+.green-version { 
+    background-color: variables.$verde !important;
+    color: variables.$preto;
+    font-weight: bolder;
+    padding: 5%;
+    height: 70vh;
+ 
+}
+
+.footer-brand{
+    background-color: variables.$preto;
+    color: variables.$verde;
+    padding: 5px;
+    width: 85vw;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    font-weight: 100;
+}
+
+.footer-menu{
+    width: 85vw;
+    padding: 5%;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    font-weight: 100;
+  
+   
+  
+    li::before {
+       content: '<';
+    }
+    li::after {
+        content: '>';
+    }
+
+    ul {
+       margin-bottom: 5%;
+    }
+}
+
+.footer-contact{
+   
+    width: 85vw;
+    text-align: center;
+
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 100;
+   
+    }
+    p{
+        font-size: 1rem;
+        font-weight: 100;   
+        
+    }
+}
+
+hr {
+  
+    border: 1.5px solid variables.$preto;
+    margin: 0;
+    padding: 0;
+
+}
+
+.footer-social-media{
+    font-size: 2rem;
+ 
+    letter-spacing: 5px;
+   
+}

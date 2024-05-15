@@ -17,6 +17,7 @@ import "bulma/css/bulma.css";
 // Hooks
 
 import { useEffect, useState } from 'react';
+import Footer from './Footer';
 
 
 
@@ -58,6 +59,7 @@ useEffect(function(){
       <Skills/>
       <Projects/>
       <Contact/>  
+      <Footer/>
 
  
   
