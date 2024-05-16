@@ -1,6 +1,15 @@
 @use '../variables.scss';
 
+@use "../../node_modules/bulma/sass/utilities/mixins";
 
+@include mixins.tablet {
+
+    .about-text-container{
+   
+    width: 85vw;
+    }
+
+}
 
 
 //Controla o container em que está o texto e a imagem

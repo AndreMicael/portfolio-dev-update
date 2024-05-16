@@ -1,12 +1,10 @@
-$verde: #23CE99; 
-$preto: #252527;
-$branco: #D1D1D1;
 
+@use '../variables.scss';
+@use "../../node_modules/bulma/sass/utilities/mixins";
 
 
 .green-style {
-    color: $verde;
-    
+    color: variables.$verde;    
 }
 
 .navbar-brand {
@@ -22,16 +20,13 @@ $branco: #D1D1D1;
     position: absolute;
     top: 80px;
     right: 0;
-    border-radius: 10px !important;
-  
+    border-radius: 10px !important;  
 }
 
 
 .navbar {
-
     padding: 0 20px;
-    height: 80px;
-    
+    height: 80px;    
     background-color: hsla(0, 0%, 100%, 0) !important;
 }
 
@@ -39,97 +34,80 @@ $branco: #D1D1D1;
     padding: 0 20px;
     height: 60px;        
     backdrop-filter: blur(100px);   
-    background-color: $branco;
+    background-color: variables.$branco;
     animation: fadeIn 0.5s;
     border-radius: 100px !important;    
     position: fixed;
     z-index: 900000;
     width: 80vw;
     left: 50%;   
-    transform: translate(-50%, 25%);
-   
-   
+    transform: translate(-50%, 25%);   
   
 
-    .navbar-item p{
-        
-        
+    .navbar-item p{   
         padding: 0 10px;      
         font-size: 1.3rem;
         font-weight: bolder;
-        color: $preto;
-     
-        
+        color: variables.$preto;        
     }
-    .navbar-item span {
-         
-    }	
-
+   
     .navbar-burger > * {
-       background-color: $preto !important; 
-        
-        
-       
+       background-color: variables.$preto !important;             
     } 
 
-    .navbar-brand {
-       
+    .navbar-brand {       
         height: 60px ;
         margin: 0 !important;
         padding: 0 !important;
         display: flex;
         justify-content: space-around;
     }
-    .navbar-burger {
-         
-        
+    .navbar-burger { 
          margin: 0;
          padding: 0;
-         transform: scale(1.2);
-         
-         
-
-    }
+         transform: scale(1.2);        
+     }
 
     .absoluto {
         position: sticky;
-        margin-top: 10px;         
-        
+        margin-top: 10px;   
         background-color: rgba($color: #000000, $alpha: 0.85);
         backdrop-filter: blur(100px);
         border-radius: 20px !important;    
         z-index: 0;
         font-weight: bolder;
 
-       
-
         .button{
-
-            background: $verde !important;
+            background: variables.$verde !important;
             font-weight: bolder !important;
-        
-        }
+      }
 
-    }
-    
-
-    
+    }    
 }
 
 
 
 .navbar-burger > * {
-    background-color: $verde !important; 
-    
-   
+    background-color: variables.$verde !important;     
 } 
 .navbar-burger{
-
 background-color: transparent !important;
 transform: scale(2);
 width: 50px !important;
-
 }
 
 
 
+@include mixins.desktop {
+    .navbar-brand {
+        font-size: 2.2rem;
+        margin-top: 0%;
+    }
+
+    .navbar-start{
+       
+        margin: 0 auto;
+    }
+   
+        
+  }

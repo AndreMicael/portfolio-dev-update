@@ -1,3 +1,7 @@
+@use "../../node_modules/bulma/sass/utilities/mixins";
+
+
+
 .grid-overlay {
   position: fixed;
   top: 0;
@@ -15,4 +19,15 @@
   background-color: rgba(237, 0, 0, 0.1); /* Cor de fundo com transparência */
 
   text-align: center; /* Alinhamento de texto */
+}
+
+
+
+@include mixins.tablet {
+  .grid-overlay{
+    left: 8vw ;  
+    right: 8vw ;
+    
+  }
+
 }

@@ -2,6 +2,13 @@ $verde: #23CE99;
 $preto: #252527;
 $branco: #D1D1D1;
 
+@use "../../node_modules/bulma/sass/utilities/mixins";
+
+
+
+
+
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -86,4 +93,44 @@ to { width: 60% }
 @keyframes blink-caret {
 from, to { border-color: transparent }
 50% { border-color: $branco }
+}
+
+
+
+@include mixins.desktop {
+
+    .home-container {
+
+        height: 77vh;
+     
+    }
+
+    .home-title {
+
+        
+
+        h2 {
+           font-size: 4rem !important;         
+           line-height: 3.8rem !important;    
+    
+    
+    
+        }
+    
+        h3{
+            font-size: 2rem !important;
+            line-height: 1.8rem !important;
+            
+        }
+    
+        .botoes {
+           
+          
+        }
+    
+        
+    
+       
+    }
+    
 }

@@ -1,6 +1,10 @@
 $verde: #23CE99; 
 $preto: #252527;
 $branco: #D1D1D1;
+@use "../../../node_modules/bulma/sass/utilities/mixins";
+
+
+
 
 .button-mockup{
     background-color: $verde !important;
@@ -40,3 +44,8 @@ $branco: #D1D1D1;
   .icon-button.hovered .icon svg {
     fill: $verde; 
   }
+
+
+
+
+  
