@@ -1,51 +1,59 @@
-$verde: #23CE99; 
-$preto: #252527;
-$branco: #D1D1D1;
+@use '../../variables.scss';
 @use "../../../node_modules/bulma/sass/utilities/mixins";
 
 
 
 
+
 .button-mockup{
-    background-color: $verde !important;
-    width: 8rem !important;
-    
+    background-color: variables.$verde !important;
+    width: 8rem !important;  
 
     p{
-        color: $preto;
+        color: variables.$preto;
         margin-left: 5%;
-
-
+      
     }
 
     span {
-        margin-right: 5%;
-  
+        margin-right: 5%;  
+        
     }
 }
 
 .button-mockup:hover{
     background-color: transparent !important; ;
-    border: 2px solid $verde ;
+    border: 2px solid variables.$verde ;
     p{
-        color: $verde;
+        color: variables.$verde;
         
     }
     img {
-        fill: $verde !important;
+        fill: variables.$verde !important;
     }
 }
 
 
-.icon:hover svg {
-    fill: $verde; 
+
+
+
+
+//Responsividade Desktop
+  @include mixins.desktop { 
+    .button-mockup{ 
+        width: 25vw !important;
+        padding: 8% 0 !important;
+        border-radius: 10px !important;
+    }
+
+    p {
+       font-size: 1.8rem;
+       font-weight: bolder;
+    }
+    span{
+        width: 40px !important;
+     }
+     
   }
-  
-  .icon-button.hovered .icon svg {
-    fill: $verde; 
-  }
 
-
-
-
-  
+ 

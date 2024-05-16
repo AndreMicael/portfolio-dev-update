@@ -4,8 +4,8 @@ function Resume() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="100"
+      height="100"
       fill="#000"
       version="1.1"
       viewBox="0 0 392.533 392.533"

@@ -4,8 +4,8 @@ function GitIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="100"
+      height="100"
       fill="#000"
       viewBox="0 0 20 20"    >
       <g fillRule="evenodd" stroke="none" strokeWidth="1">
