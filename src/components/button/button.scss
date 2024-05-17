@@ -41,17 +41,22 @@
 //Responsividade Desktop
   @include mixins.desktop { 
     .button-mockup{ 
-        width: 25vw !important;
+        width: 10vw !important;
         padding: 8% 0 !important;
         border-radius: 10px !important;
     }
 
     p {
-       font-size: 1.8rem;
+       font-size: 1.1rem;
        font-weight: bolder;
     }
     span{
         width: 40px !important;
+      
+     }
+
+     .icon {
+        width: 25px !important;
      }
      
   }

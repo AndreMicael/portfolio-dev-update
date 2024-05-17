@@ -1,5 +1,19 @@
 @use '../variables.scss';
+@use "../../node_modules/bulma/sass/utilities/mixins";
 
+
+@include mixins.desktop {
+
+    .icons-skills{
+        width: 70vw !important;
+        grid-template-columns: repeat(8, 1fr) !important;
+        
+        .icon-sk{
+            
+        }
+    }
+
+}
 
 
 .icons-skills {

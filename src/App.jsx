@@ -33,7 +33,7 @@ const [activeColor, setActiveColor] = useState(false);
 useEffect(function(){
 
   function onScroll(){
-    if(window.scrollY > 10){
+    if(window.scrollY > 15){
       setActiveColor(true);
     }
     else{

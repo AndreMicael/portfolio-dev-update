@@ -1,4 +1,63 @@
 @use '../variables.scss';
+@use "../../node_modules/bulma/sass/utilities/mixins";
+
+@include mixins.desktop {
+
+    .projetos-container {
+
+    width: 50vw !important;
+    flex-direction: column !important;
+    height: 30vw;
+    justify-content: flex-start !important;
+    padding: 5%;
+   
+
+    }
+
+    .project-img{
+        max-height: 15vh;
+       
+        width: 30vw !important;
+      
+        margin: 0 auto;
+        max-height: 80vh;    
+        margin-bottom: 2%;
+
+        img {
+            object-fit: cover !important;
+            height: 35vh;
+        }
+        
+    }
+
+    
+    .project-desc{
+        
+       
+        width: 45vw !important;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        line-height: 1.5rem !important;
+    }
+
+
+    .ver-mais{
+       
+
+        margin-bottom: 3% !important;
+    
+       
+          
+    }
+
+    .ver-mais-button{
+        margin-top: 15% !important;
+    }
+
+
+   
+
+}
 
 .projetos-container {
     display: flex;
@@ -11,6 +70,7 @@
     background-color: rgba($color: #000, $alpha: 0.4);
     
     
+    
  
     .project-img, .project-desc{
         
@@ -21,7 +81,7 @@
         justify-content: center;
         align-items: center;
         padding: 10px;
-        max-height: 20vh;
+      
         line-height: 1rem;
         text-align: justify;
         

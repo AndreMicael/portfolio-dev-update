@@ -102,11 +102,27 @@ width: 50px !important;
     .navbar-brand {
         font-size: 2.2rem;
         margin-top: 0%;
+      
+    }
+
+    .green-style{
+        color: variables.$preto;
     }
 
     .navbar-start{
        
         margin: 0 auto;
+    }
+
+    .navbar-active{
+        display: flex;
+        background-color: hsla(0, 0%, 100%, 0.493) !important;
+
+        .navbar-start{
+            color: variables.$preto;
+            
+        }
+       
     }
    
         

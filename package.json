@@ -22,7 +22,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-bulma": "sass --load-path=node_modules my-bulma-project.scss my-bulma-project.css"
-   
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
   }
 }

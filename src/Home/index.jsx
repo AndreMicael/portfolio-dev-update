@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
         
-        <div className="home-container container is-fluid">
+        <div className="home-container min-w-fit container is-fluid">
             <div className='home-title'>
             <h3>Prazer, me chamo André</h3>
             <h2>Sou desenvolvedor</h2><h2 className='typewritter'>front-end.</h2>
