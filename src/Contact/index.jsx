@@ -3,7 +3,7 @@ import './contact.scss';
 
 const Contact = () => {
   return (
-    <div className='categories-container'>
+    <div className='categories-container contact-container'>
         <h1 className='categories'>Contato</h1>
         <div className='Form'>
             

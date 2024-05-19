@@ -2,36 +2,30 @@ import "./Footer.scss"
 
 const Footer = () => {
   return (
-    <div className='categories-container green-version'>
-     
-       <div className="footer-brand">André.dev</div>
 
-       <div className="footer-menu">
-       <ul>
-        <li><a href="http://">Sobre Mim</a></li>
-        <li><a href="http://">Habilidades</a></li>
-        <li><a href="http://">Projetos</a></li>
-        <li><a href="http://">Experiências</a></li>
-        </ul> 
 
-        <hr/>
+
+
+<footer className="bg-[#18181b] w-screen p-4 ">
+    <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+              
+                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">André.dev</span>
+            </a>
+            
         </div>
-        <div className="footer-contact">
-
-            <h1>Diga Olá!</h1>
-            <p>andremicael@gmail.com</p>
-
-            <div className="footer-social-media">
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-square-behance"></i>
-            </div>
-
-        </div>
-
-     
-       
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div className=" border-slate-700">
+    <span className="inline  mx-auto text-center">
+        © 2024 <a href="https://flowbite.com/" className="text-[#23CE99] hover:underline">André Micael Sampaio</a>. Todos os direitos Reservados.
+    </span>
+</div>
     </div>
+</footer>
+
+
+
 
 
   )

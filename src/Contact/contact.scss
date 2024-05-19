@@ -1,4 +1,30 @@
 @use '../variables.scss';
+@use "../../node_modules/bulma/sass/utilities/mixins";
+
+@include mixins.desktop {
+
+  .contact-container{
+    margin-bottom: 5% !important;
+  }
+
+  .form-contato {
+    width: 30vw !important;
+  }
+  textarea {
+    width: 30vw !important;
+  }
+
+  input {
+    width: 30vw !important;
+  
+  }
+
+  .Enviar-button {
+    width: 30vw !important;
+    height: 6vh !important;
+  }
+
+}
 
 .icon {
   i {
@@ -9,7 +35,7 @@
 
 .form-contato {
   background-color: rgba($color: #000, $alpha: 0.4) !important;
-
+ 
  
   
 }
