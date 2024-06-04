@@ -4,12 +4,14 @@
 
 @include mixins.desktop {
 
+    
+
+
     .about-text-container{
     grid-template-columns:  2fr 1fr !important;
     gap: 2% !important;
-    
-   
-
+    font-family: variables.$fonte2;
+    text-align: justify;
     width: 70vw !important;
 
     img {
@@ -37,16 +39,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 85vw;
+   
+
+    
+
+    strong{
+        color: variables.$verde;
+    }
   
 
     p {
       
         width: 100%;
+        text-indent: 2rem;
     }
     img {
-        
-     
+  
+      
         border: 10px solid variables.$verde;
+    }
+    .profile {
+        width: 100%;
+    
     }
 }
 
@@ -75,3 +89,7 @@
 }
 
 
+
+.text-about-me {
+    font-weight: normal;
+}
