@@ -1,5 +1,6 @@
 //Componentes
 
+
 import Navbar from './Navbar/Navbar';
 import Home from './Home';
 import About from './About';
@@ -8,6 +9,12 @@ import Skills from './Skills';
 // import Grids from './Grids/Grids';
 import Projects from './Projects';
 import Contact from './Contact';
+
+
+
+
+
+
 
 // Estilos
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -50,6 +57,7 @@ useEffect(function(){
   return (
    
     <div className="App">
+   
       <ParticlesComponent  id="particles" />     
       {/* <Grids/>     */}
       <Navbar action={activeColor} /> 
@@ -60,7 +68,7 @@ useEffect(function(){
       <Projects/>
       <Contact/>  
       <Footer/>
-
+     
  
   
      </div>
