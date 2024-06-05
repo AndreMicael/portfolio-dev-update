@@ -34,11 +34,14 @@ const Projects = () => {
 
 
   return (
-    <div className="container">
+    <div className="">
 
   <h1 className="categories">projetos</h1>
 
-        <div className="mockup">
+        <div className="mockups">
+
+      <div className="slider"> 
+
         <Swiper
           slidesPerView={1.2}
       
@@ -50,11 +53,12 @@ const Projects = () => {
           {getProject.map((item) => (
             <SwiperSlide key={item.id}>
               <ProjectMockup stack={item.stack} img={item.img} desc={item.projeto} />
-
              
             </SwiperSlide>
           ))}
         </Swiper>
+
+        </div>
         </div>
         
        

@@ -182,9 +182,15 @@
 }
 
 .mockups {
-    display: grid;
-    grid-template-rows: 1fr;
-    row-gap: 5%;
+    
+    border: 1px solid red;
+    margin: 0 auto;
+    width: 100vw;
+
+    .slider {
+        
+    }
+
    
 }
 
