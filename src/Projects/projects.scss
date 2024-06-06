@@ -3,45 +3,62 @@
 
 @include mixins.desktop {
 
-    .projetos-container {
+    .projects-cont{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
 
-    width: 50vw !important;
+        h1 {
+            text-align: center;
+          
+            margin: 0 auto;
+            margin-bottom: 2%;
+        }
+    }
+
+    .projetos-container {
+    width: 40vw !important;
     flex-direction: column !important;
-    height: 30vw;
-    justify-content: flex-start !important;
-    padding: 5%;
+    height: 25vw;
+    justify-content: flex-start !important;   
     flex-shrink: 0 !important;
-   
+    margin: 0 auto !important;   
 
     }
 
     .project-img{
-        max-height: 15vh;
+ 
        
-        width: 30vw !important;
-      
-        margin: 0 auto;
-        max-height: 80vh;    
-        margin-bottom: 2%;
+        
+        margin-bottom: 3%;
+        margin-top: 3%;
+        position: relative;
+     
+        
 
         img {
             object-fit: cover !important;
             height: 35vh;
+            border-radius: 10px !important;
+            width: 38vw;
+            object-fit: cover; /* Cobre a div mantendo a proporção da imagem */
+            object-position: top; /* Alinha a parte superior da imagem com o topo da div */
+          
         }
         
     }
 
     
     .project-desc{
-        
+         
+   
        
-        width: 45vw !important;
-        margin: 0 auto;
-        font-size: 1.2rem;
+        width: 35vw;
         line-height: 1.5rem !important;
-        flex-shrink: 0 !important;
         
     }
+
+   
 
 
     .ver-mais{
@@ -66,10 +83,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 85vw;
+    align-items: center !important;
+    width: 30vw;
     border: 2px solid variables.$verde;
     color: variables.$verde;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: rgba($color: #000, $alpha: 0.4);
     
     
@@ -78,18 +96,23 @@
     .project-img, .project-desc{
         
         color: variables.$branco;
-        border-radius: 5px;
-        width: 100%;
+        border-radius: 15px;       
         display: flex;       
         justify-content: center;
         align-items: center;
-        padding: 10px;
-      
+       font-family: variables.$fonte2;
+        font-size: 1rem;
         line-height: 1rem;
         text-align: justify;
         
     }
 
+    .project-img{
+       
+      
+    }
+
+  
     
 
 }
@@ -97,28 +120,38 @@
 .project-buttons{
     display: flex;
     justify-content: space-around;
+    width: 25vw;
+    margin: 0 auto;
+    margin-bottom: 5%;
   
   
 }
 
 .stacks {
     display: flex;
+    width: 30vw !important;
+    padding:0% 5% !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;    
     padding: 5px 10px;
     border: 2px solid variables.$verde;
     color: variables.$verde;
-    border-radius: 5px;
+  
+    border-radius: 15px;
     font-weight: bolder;
-    margin: 3% 0;
+    margin: 0 auto;
+    margin-top: 1%;
     overflow: hidden;
-    max-width: 85vw;
+    margin-bottom: 2%;
+  
     background-color: rgba($color: #000, $alpha: 0.4);
 }
 
 .tecnologias {
     color: variables.$branco;
+    
+    text-align: center;
 }
 
 @keyframes myAnim {
@@ -183,9 +216,9 @@
 
 .mockups {
     
-    border: 1px solid red;
+
     margin: 0 auto;
-    width: 100vw;
+    width: 98vw;
 
     .slider {
         

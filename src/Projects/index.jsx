@@ -1,40 +1,18 @@
 import "./projects.scss"
 import ProjectMockup from "../assets/ProjectMockup"
-// import {  useState } from 'react';
-
 import {getProject} from "../assets/texts"
-
-
 import {Swiper,SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination} from 'swiper/modules';
+import {Navigation} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-
-
-
 const Projects = () => {
 
  
-
-// const [show,setShow] = useState(false);
-// const [showText,setShowText] = useState(<i class="fa-solid fa-plus"></i>);
-// const [space,setSpace] = useState(false);
-
-// const handleShow = () => {
-
-//   setShow(!show);
-//   setShowText(show ? <i class="fa-solid fa-plus"></i>: <i class="fa-solid fa-minus"></i>);
-//   setSpace(!space);
-
-// }
-
-
-
   return (
-    <div className="">
+    <div className="projects-cont">
 
   <h1 className="categories">projetos</h1>
 
@@ -43,11 +21,11 @@ const Projects = () => {
       <div className="slider"> 
 
         <Swiper
-          slidesPerView={1.2}
+          slidesPerView={2}
       
           navigation={true}
           loop={true}
-          spaceBetween={40}
+          spaceBetween={0}
           modules={[Navigation]}
         >
           {getProject.map((item) => (
