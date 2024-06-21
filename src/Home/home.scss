@@ -1,96 +1,27 @@
 @use '../variables.scss';
 @use "../../node_modules/bulma/sass/utilities/mixins";
 
-
+// Estilos gerais
 .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 35vh;   
-    padding: 0 20px;
-}
-
-.categories-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
     padding: 0 20px;
-    margin-bottom: 15%;
-}
-
-.home-title {
-
-    h2 {
-       font-size: 2.67rem;
-       letter-spacing: -2px;
-       color: variables.$verde;
-       margin: 0;
-       padding: 0;
-       white-space: nowrap;
-       line-height: 2.6rem;
-    }
-
-    h3{
-        font-size: 1.5rem;
-        line-height: 1.4rem;        
-    }
-
-    .botoes {
-        margin-top: 20px; 
-        display: flex;
-        justify-content: center;
-        gap: 20px; 
-    }
-}
-
-
-
-.typewritter {
-    overflow: hidden; 
-    border-right: .10em solid rgb(255, 255, 255);
-    white-space: nowrap; 
-    margin: 0 auto;
-    letter-spacing: .15em; 
-    animation: 
-      typing 3s steps(20, end),
-      blink-caret .70s step-end infinite;      
-      width: fit-content;
-   }
-
-
-@keyframes typing {
-from { width: 0 }
-to { width: 60% }
-}
-
-@keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: variables.$branco }
-}
-
-// Responsividade Desktop
-@include mixins.desktop {
-
+    font-family: variables.$fonte2;
+    font-weight: lighter;
+    height: 70vh;
   
 
-    .home-container {
-        height: 80vh;     
-    }
-
-    .home-title {
-        h2 {
-           font-size: 4.5rem;        
-           line-height: 4rem; 
-        }
-    
-        h3{
-            font-size: 2rem;
-            line-height: 2.9rem;
-        }
-        .botoes {
-            margin-top: 10%;
-        }
-                }    
 }
+
+.home-itens {
+    width: 50vw;
+    border: 1px dashed red;
+   
+}
+
+.dashed {
+    border: 1px dashed yellow;
+}
+

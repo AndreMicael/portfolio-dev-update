@@ -5,9 +5,17 @@
 
 
 
+
+
 .button-mockup{
+
+  
     background-color: variables.$verde !important;
-    width: 8rem !important;  
+
+    width: 10rem !important;  
+    
+    
+   
 
     p{
         color: variables.$preto;
@@ -23,7 +31,10 @@
 
 .button-mockup:hover{
     background-color: transparent !important; ;
-    border: 2px solid variables.$verde ;
+
+   
+
+   
     p{
         color: variables.$verde;
         
@@ -37,28 +48,5 @@
 
 
 
-
-//Responsividade Desktop
-  @include mixins.desktop { 
-    .button-mockup{ 
-        width: 10vw !important;
-        padding: 8% 0 !important;
-        border-radius: 10px !important;
-    }
-
-    p {
-       font-size: 1.1rem;
-       font-weight: bolder;
-    }
-    span{
-        width: 40px !important;
-      
-     }
-
-     .icon {
-        width: 25px !important;
-     }
-     
-  }
 
  

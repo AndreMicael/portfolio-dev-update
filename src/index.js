@@ -4,6 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 import {register} from 'swiper/element/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';

@@ -1,236 +1,50 @@
 @use '../variables.scss';
 @use "../../node_modules/bulma/sass/utilities/mixins";
 
-@include mixins.desktop {
+.projetos-container {
+.project-img {
 
-    .projects-cont{
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
+    height: 15vh;  
 
-        h1 {
-            text-align: center;
-          
-            margin: 0 auto;
-            margin-bottom: 2%;
-        }
+    img {
+        overflow: hidden;
     }
+  
+}
 
-    .projetos-container {
-    width: 40vw !important;
-    flex-direction: column !important;
+.project-img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 25vw;
-    justify-content: flex-start !important;   
-    flex-shrink: 0 !important;
-    margin: 0 auto !important;   
+    border-radius: 10px; 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); 
+    pointer-events: none; 
+}
 
-    }
-
-    .project-img{
+.project-desc {
+    padding: 5% 10%;
+    font-size: .8rem;
+    text-align: justify;   
+    color: #fff;
+    font-family: variables.$fonte2;    
  
-       
-        
-        margin-bottom: 3%;
-        margin-top: 3%;
-        position: relative;
-     
-        
-
-        img {
-            object-fit: cover !important;
-            height: 35vh;
-            border-radius: 10px !important;
-            width: 38vw;
-            object-fit: cover; /* Cobre a div mantendo a proporção da imagem */
-            object-position: top; /* Alinha a parte superior da imagem com o topo da div */
-          
-        }
-        
-    }
-
-    
-    .project-desc{
-         
-   
-       
-        width: 35vw;
-        line-height: 1.5rem !important;
-        
-    }
-
-   
-
-
-    .ver-mais{
-       
-
-        margin-bottom: 3% !important;
-    
-       
-          
-    }
-
-    .ver-mais-button{
-        margin-top: 15% !important;
-    }
-
-
-   
 
 }
 
-.projetos-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center !important;
-    width: 30vw;
-    border: 2px solid variables.$verde;
-    color: variables.$verde;
-    border-radius: 15px;
-    background-color: rgba($color: #000, $alpha: 0.4);
-    
-    
-    
- 
-    .project-img, .project-desc{
-        
-        color: variables.$branco;
-        border-radius: 15px;       
-        display: flex;       
-        justify-content: center;
-        align-items: center;
-       font-family: variables.$fonte2;
-        font-size: 1rem;
-        line-height: 1rem;
-        text-align: justify;
-        
-    }
 
-    .project-img{
-       
-      
-    }
 
-  
-    
 
 }
 
 .project-buttons{
-    display: flex;
-    justify-content: space-around;
-    width: 25vw;
-    margin: 0 auto;
-    margin-bottom: 5%;
-  
-  
-}
-
-.stacks {
-    display: flex;
-    width: 30vw !important;
-    padding:0% 5% !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
-    padding: 5px 10px;
-    border: 2px solid variables.$verde;
-    color: variables.$verde;
-  
-    border-radius: 15px;
-    font-weight: bolder;
-    margin: 0 auto;
-    margin-top: 1%;
-    overflow: hidden;
-    margin-bottom: 2%;
-  
-    background-color: rgba($color: #000, $alpha: 0.4);
-}
-
-.tecnologias {
-    color: variables.$branco;
-    
-    text-align: center;
-}
-
-@keyframes myAnim {
-	0% {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.inativo {
-    display: none;
-
-   
-   
-}
-
-
-.ativo {
     display: grid;
-    grid-template-rows: 1fr;
-    row-gap: 5%;
-    opacity: 1;
-    transform: translateY(0);
-    animation: myAnim 1s ease 0s 1 normal forwards;
-    
-}
-
-
-
-.ver-mais{
-    
-    padding-top: 20px;
-    margin-bottom: -5%;
-      
-}
-
-.ver-mais-button{
-    margin-top: 25%;
-}
-
-
-
-
-
-
-@keyframes myAnim {
-	0% {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.mockups {
-    
-
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    width: 98vw;
 
-    .slider {
-        
-    }
-
-   
-}
-
-button i { 
-    font-size: 2rem;
-    color: variables.$verde;
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    padding: 5px;    
-    width: 100vw;
 }

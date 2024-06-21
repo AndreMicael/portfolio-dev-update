@@ -53,12 +53,7 @@ const Navbar = ({action}) => {
 
           <div className="navbar-end">
             <div className="navbar-item">
-              <div className="buttons">
-                <a href="http://" className="button is-primary">
-                  <strong>Currículo</strong>
-                </a>
-                <a href="http://" className="button is-primary">GitHub</a>
-              </div>
+              
             </div>
           </div>
         </div>

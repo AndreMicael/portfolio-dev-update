@@ -73,6 +73,6 @@ input {
 
 .Enviar-button:hover {
   background-color: transparent;
-  border: 2px solid variables.$verde;
+  border: 2px inset variables.$verde;
   color: variables.$verde;
 }
