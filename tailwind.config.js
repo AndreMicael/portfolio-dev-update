@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        sm2: '1rem',
+      },
       container: {
         center: true,
       },
@@ -12,7 +15,9 @@ module.exports = {
         'verde': '#23CE99',
         'verde-light': '#56ff88',
         'verde-shadow': '#14a578',
+        'cinza': '#898989;.'
       },
+     
     },
   },
   plugins: [],

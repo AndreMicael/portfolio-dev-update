@@ -10,18 +10,48 @@
     padding: 0 20px;
     font-family: variables.$fonte2;
     font-weight: lighter;
-    height: 70vh;
+    height: 70vh !important;
+ 
+    
   
 
 }
 
 .home-itens {
-    width: 50vw;
-    border: 1px dashed red;
+    min-width: 50vw;
    
 }
+
+@media (max-width: 768px) {
+    .home-itens {
+        width: 80vw;
+    }
+}
+
 
 .dashed {
     border: 1px dashed yellow;
 }
 
+
+
+
+.available {
+    border: 1px solid rgba($color: variables.$branco, $alpha: 0.5);
+    background-color: #000; 
+    border-radius: 30px;
+    padding: 0 2%;
+    font-weight: normal;
+ 
+    
+    .icon {
+    padding: 0px;
+  
+    line-height: 0px;
+    margin-left: -8%;
+   
+    
+    }
+
+    
+}

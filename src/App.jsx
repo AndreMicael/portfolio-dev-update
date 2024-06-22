@@ -6,7 +6,7 @@ import Home from './Home';
 import About from './About';
 import ParticlesComponent from './components/particles';
 import Skills from './Skills';
-// import Grids from './Grids/Grids';
+import Grids from './Grids/Grids';
 import Projects from './Projects';
 import Contact from './Contact';
 
@@ -59,16 +59,16 @@ useEffect(function(){
     <div className="App">
    
       <ParticlesComponent  id="particles" />     
-      {/* <Grids/>     */}
-      <Navbar action={activeColor} /> 
+       {/* <Grids/>      */}
+      {/* <Navbar action={activeColor} />  */}
       {/* Enviando props do scroll para o Navbar */}
       <Home />
-      <About />
+      <About /> {/*
       <Skills/>
       <Projects/>
       <Contact/>  
       <Footer/>
-     
+      */}
  
   
      </div>
