@@ -5,10 +5,7 @@ import Navbar from './Navbar/Navbar';
 import Home from './Home';
 import About from './About';
 import ParticlesComponent from './components/particles';
-import Skills from './Skills';
-import Grids from './Grids/Grids';
-import Projects from './Projects';
-import Contact from './Contact';
+
 
 
 
@@ -34,23 +31,23 @@ import Footer from './Footer';
 function App() {
 
 // 2 - Criar um estado para o scroll
-const [activeColor, setActiveColor] = useState(false);
+// const [activeColor, setActiveColor] = useState(false);
 
 // 1 - Criar um use Effect para o scroll
-useEffect(function(){
+// useEffect(function(){
 
-  function onScroll(){
-    if(window.scrollY > 15){
-      setActiveColor(true);
-    }
-    else{
-      setActiveColor(false);
-    }
-  }
+//   function onScroll(){
+//     if(window.scrollY > 15){
+//       setActiveColor(true);
+//     }
+//     else{
+//       setActiveColor(false);
+//     }
+//   }
 
-    window.addEventListener('scroll', onScroll);
+//     window.addEventListener('scroll', onScroll);
 
-},[]);
+// },[]);
 
 
 
@@ -61,14 +58,15 @@ useEffect(function(){
       <ParticlesComponent  id="particles" />     
        {/* <Grids/>      */}
       {/* <Navbar action={activeColor} />  */}
+      <Navbar /> 
       {/* Enviando props do scroll para o Navbar */}
       <Home />
       <About /> {/*
       <Skills/>
       <Projects/>
-      <Contact/>  
+      <Contact/>  */}
       <Footer/>
-      */}
+      
  
   
      </div>

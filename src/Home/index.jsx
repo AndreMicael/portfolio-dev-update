@@ -12,11 +12,11 @@ const Home = () => {
   return (
     <>
         
-        <div className="home-container min-w-fit container is-fluid">
+        <div className="home-container min-w-fit container is-fluid ">
 
 
       {/* Aqui em criei uma div que vai conter as duas colunas onde fica na esquerda uma foto e na direita fica textos */}
-      <div className="home-itens flex lg:items-center md:items-center sm:items-center items-center gap-4  
+      <div className=" home-itens flex lg:items-center md:items-center sm:items-center items-center gap-4  
     
       ">
 
@@ -37,7 +37,7 @@ const Home = () => {
              </button>
 
              <h2 className='lg:text-4xl md:text-4xl sm:text-3xl text-xl text-white font-bold mt-2 whitespace-nowrap'>
-           Full-Stack <br/> Developer & Designer
+           Full-Stack <br/> Developer & Designer.
             </h2>
 
             <p className='mt-2 text-4sm text-white w-71             
