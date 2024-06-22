@@ -3,11 +3,11 @@
 
 import Navbar from './Navbar/Navbar';
 import Home from './Home';
-import About from './About';
+
 import ParticlesComponent from './components/particles';
 
 
-
+import { Tabs } from './components/tabs/Tabs';
 
 
 
@@ -61,7 +61,7 @@ function App() {
       <Navbar /> 
       {/* Enviando props do scroll para o Navbar */}
       <Home />
-      <About /> {/*
+      <Tabs/>{/*
       <Skills/>
       <Projects/>
       <Contact/>  */}

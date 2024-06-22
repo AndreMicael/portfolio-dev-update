@@ -1,0 +1,115 @@
+@use '../../variables.scss';
+
+.tabs-container{
+    max-width: 75rem;
+    width: 70vw;
+    margin: 0 auto;
+ 
+    
+
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        
+       
+       
+
+        li {
+           
+            padding: .6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 9rem;
+            text-align: center;
+            border-radius: .7rem .7rem 0 0;
+            border: 1px solid #dedede;
+            cursor: pointer;
+            transition: color .3s ease;
+            background-color: rgba($color: #000000, $alpha: 0.2);
+
+            .icon{
+                font-size: 1.2rem;
+               
+      
+            }
+
+            .title {
+                
+                            
+
+            }
+
+            .title.active{
+                color: variables.$preto;
+                font-weight: 500; 
+                font-size: .9rem;
+                animation: fadeIn 0.2s ease-in-out;
+                
+            }
+            .title.inactive{
+                color: variables.$branco;
+                font-weight: 500; 
+                font-size: .9rem;
+                
+            }
+        }
+
+        li.active {
+            background-color: variables.$verde;
+            color: variables.$preto;
+            font-weight: 500; 
+
+            //Topo das abas
+        }
+    
+
+
+    }
+
+    .content {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0rem .7rem .7rem .7rem;
+        border: 1px solid #dedede;
+
+        .desc {
+            width: 100%;
+            font-size: .9rem;
+            padding: 2rem;
+            line-height: 1.6;
+            border-radius:  0rem .7rem .7rem .7rem;
+            min-height: 25rem;
+            display: none;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+        .desc.active {
+            display: block;
+            background-color: rgba($color: #000000, $alpha: 0.2);
+
+        }
+        // .desc:nth-child(2).active {
+        //     background-color: red;
+        // }
+        // .desc:nth-child(3).active {
+        //     background-color: blue;
+        // }
+    }
+
+
+}
+
+
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
