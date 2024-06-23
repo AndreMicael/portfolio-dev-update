@@ -13,10 +13,10 @@ const Navbar = () => {
 
 
   return (
-    <div>
+    <div className=''>
         
     <nav className='xl:w-[55vw] lg:w-[55vw] md:w-[80vw] sm:w-[80vw] w-[80vw] 
-    md:h-[12vh] sm:h-[14vh] h-[10vh]
+    py-2
      mt-6  
      px-5
     

@@ -19,10 +19,7 @@ export const Data = [
         title: "Sobre Mim",
         desc: <About/>,
     },
-    {   icon: <FaTools/>,
-        title: "Habilidades",
-        desc: <Skills/>,
-    },
+   
     
     {   icon: <MdMarkEmailUnread/>,
         title: "Contato",

@@ -13,9 +13,15 @@ export const Tabs = () => {
     }
 
   return (
-    <div className='tabs-container'>
+    <div className='tabs-container
+    xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[70vw]
+    whitespace-nowrap
+    '>
         
-        <ul className="list-none">
+        <ul className="list-none whitespace-nowrap
+         
+        flex 
+        ">
             { 
                 Data.map((Data,i) => 
                   
