@@ -103,7 +103,7 @@ const DarkMode = () => {
           </div>
         }
       >
-        <div className={`botao-dark p-0 ${isPart ? 'inactive' : 'active'}`}>
+        <div className={`botao-dark p-0 ${isPart || isCircle ? 'active' : 'inactive'}`}>
           <TbBackground />
           {isPart ? <ParticlesComponent id="particles" /> : ''}
           {isCircle ? <Circles id="particles" /> : ''}
