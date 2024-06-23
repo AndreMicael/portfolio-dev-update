@@ -16,7 +16,7 @@ const Navbar = () => {
     <div>
         
     <nav className='xl:w-[55vw] lg:w-[55vw] md:w-[80vw] sm:w-[80vw] w-[80vw] 
-    md:h-[12vh] sm:h-[14vh] h-[12vh]
+    md:h-[12vh] sm:h-[14vh] h-[10vh]
      mt-6  
      px-5
     
