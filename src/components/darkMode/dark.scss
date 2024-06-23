@@ -1,0 +1,43 @@
+@use '../../variables.scss';
+
+
+
+.botao-dark {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15%;
+  border: 2px solid #{variables.$verde};
+  color: #{variables.$verde};
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+
+  &.active {
+    background-color: #{variables.$verde};
+    color: #{variables.$preto};
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  &.inactive {
+    animation: fadeIn 1s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;  
+  
+  
+  }
+  100% {
+    opacity: 1;
+   
+
+ 
+  }
+}
+
+

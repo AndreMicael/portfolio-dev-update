@@ -4,7 +4,7 @@
 import Navbar from './Navbar/Navbar';
 import Home from './Home';
 
-import ParticlesComponent from './components/particles';
+
 
 
 import { Tabs } from './components/tabs/Tabs';
@@ -55,7 +55,7 @@ function App() {
    
     <div className="App">
    
-      <ParticlesComponent  id="particles" />     
+    
        {/* <Grids/>      */}
       {/* <Navbar action={activeColor} />  */}
       <Navbar /> 

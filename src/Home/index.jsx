@@ -29,7 +29,7 @@ const Home = () => {
 
           {/* div para as informações */}
           <div className="home-text  md:w-40">
-            <button className='available text-xs flex flex-row   '>
+            <button className='available text-xs flex flex-row w-[6.2vw]  '>
           
           <div className="icon"><FontAwesomeIcon icon={faCircle} style={{ color: '#23ce99', fontSize: '8px',}} /></div> 
           <div className='text self-center'>Disponível</div>

@@ -1,63 +1,40 @@
 import React, { useState } from 'react'; // Importando corretamente o hook useState
 import './navbar.scss';
 
-const Navbar = ({action}) => {
-  const [isActive, setIsActive] = useState(false);
+import DarkMode from "../components/darkMode/DarkMode"
+import logo from "../assets/tabfolio.svg"
 
-  const handleBurgerClick = () => {
-    setIsActive(!isActive);
-  };
+
+
+const Navbar = () => {
+
+
 
 
 
   return (
     <div>
-      <nav className={`${action ?'navbar-active':'navbar'} is-transparent`} role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <a className="navbar-item" href="http://localhost:3000/">
-          <p>André<span className="green-style">.dev</span></p></a>
-
-      {/* Menu hamburger
-      Foi colocada uma função handleBurgerClick 
-      para fazer o menu hamburguer funcionar. 
+        
+    <nav className='xl:w-[55vw] lg:w-[55vw] md:w-[80vw] sm:w-[80vw] w-[80vw] 
+    md:h-[12vh] sm:h-[14vh] h-[12vh]
+     mt-6  
+     px-5
+    
+    '>
       
-      Quando ativo, o hamburger vira um X e o menu é exibido.
-      */}
-          <span 
-            role="button"
-            onClick={handleBurgerClick}
-            className={`navbar-burger ${isActive ? 'is-active' : ''}`}
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-         
-            
+      <div className="brand whitespace-nowrap">
+        <img className='
+        min-w-32
+   
+        ' src={logo} alt="Logo Tabfólio" />
+      </div>
 
-            
-          </span>
-        </div>
+      <div className='botao'>
+        <DarkMode/>
+      </div>
 
-        <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active absoluto' : ''}`}>
-          <div className="navbar-start">
-            <a href="http://" className="navbar-item">Home</a>
-            <a href="http://" className="navbar-item">Sobre</a>
-            <a href="http://" className="navbar-item">Habilidades</a>
-            <a href="http://" className="navbar-item">Projetos</a>
-            <a href="http://" className="navbar-item">Contato</a>
-          </div>
+    </nav>
 
-          <div className="navbar-end">
-            <div className="navbar-item">
-              
-            </div>
-          </div>
-        </div>
-      </nav>
     </div>
   );
 };
