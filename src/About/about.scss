@@ -7,9 +7,70 @@
 .about-container{
 
     .text-about {
+        h3 {
+            color: variables.$branco;
+        }
+   
         strong {
             color: variables.$verde;
         }
+        text-align: justify;
+    }
+
+    .skill {
+        h4 {
+            color: variables.$branco;
+            font-weight: 600 !important;
+        
+        }
+          .item {
+            border: 1px solid variables.$branco;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 2%;
+            display: flex;
+            gap: 10px;
+            
+
+            .icon {
+                color: #E56399;
+                font-size: 20px;
+                
+                
+            }
+
+         
+          }
+
+          .item:hover {
+            background-color: rgba($color: #fff, $alpha: 0.2);
+            transition: 0.5s ease;
+          }
+        
+    }
+
+    .lang, .ports {
+
+        
+   
+        h4{
+            color: variables.$branco;
+            font-weight: 600 !important;
+        }
+
+        h6 {
+            font-weight: 500;
+            border-left: 1px solid variables.$rosa;
+            padding-left: 2%;
+        }
+
+        .icon {
+            color: #E56399;
+            font-size: 20px;
+            
+            
+        }
+
     }
 
    

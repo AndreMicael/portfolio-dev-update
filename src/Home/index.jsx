@@ -19,14 +19,14 @@ const Home = ({onAction}) => {
   return (
     <>
         
-        <div className="home-container  container is-fluid 
+        <div className="  home-container  container is-fluid 
        p-0 lg:h-[75vh] md:h-[65vh] sm:h-[60vh] h-[60vh]
         ">
 
 
       {/* Aqui em criei uma div que vai conter as duas colunas onde fica na esquerda uma foto e na direita fica textos */}
       <div className=" home-itens 
-      w-[65vw]
+      xl:w-[45vw] w-[65vw]
       flex 
       xl:flex-row lg:flex-row md:flex-row sm:flex-row 
       
@@ -37,7 +37,7 @@ const Home = ({onAction}) => {
           {/* div para armazenar a foto */}
           
           <img src={avatar} className='
-          xl:w-60 lg:w-60 md:w-40 sm:w-30 w-[30vw] 
+          xl:w-50 lg:w-60 md:w-40 sm:w-30 w-[30vw] 
 
            rounded-2xl' alt="Avatar"/>
          

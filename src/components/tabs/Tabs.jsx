@@ -24,7 +24,11 @@ export const Tabs = () => {
   }, [homeData, setHomeData]);
 
   return (
-    <div className='tabs-container xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[70vw] whitespace-nowrap'>
+    
+    <div className='tabs-container xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[70vw] whitespace-nowrap
+   
+    '>
+  
       <ul className="list-none whitespace-nowrap flex">
         {Data.map((data, i) => (
           <li 
@@ -42,6 +46,8 @@ export const Tabs = () => {
       </ul>
 
       <div className="content">
+      <div className=" overflow-y-auto 
+    h-[70vh]">
         {Data.map((data, i) => (
           <div
            
@@ -51,6 +57,7 @@ export const Tabs = () => {
             {data.desc}
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

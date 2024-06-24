@@ -24,6 +24,7 @@ const Navbar = () => {
       
       <div className="brand whitespace-nowrap">
         <img className='
+       
         min-w-32
    
         ' src={logo} alt="Logo Tabfólio" />
