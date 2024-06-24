@@ -19,7 +19,8 @@ module.exports = {
         'verde': '#23CE99',
         'verde-light': '#56ff88',
         'verde-shadow': '#14a578',
-        'cinza': '#898989;.'
+        'cinza': '#898989',
+        'preto': '#000000',
       },
      
     },
