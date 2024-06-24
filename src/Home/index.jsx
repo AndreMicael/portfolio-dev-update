@@ -1,12 +1,19 @@
 import './home.scss';
 import avatar from '../assets/avatar.png'
+import React, { useContext } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { HomeTabsContext } from '../Contexto/HomeTabsContext';
 
-const Home = () => {
+const Home = ({onAction}) => {
 
-  
+  const { setHomeData } = useContext(HomeTabsContext);
+
+  const handleClick = () => {
+    const data = true;
+    setHomeData(data);
+  };
 
  
   return (
@@ -56,7 +63,7 @@ const Home = () => {
             whitespace-normal
             xl:w-[30vw] lg:w-[40vw] md:w-[50vw] sm:w-[53vw] w-[45vw] 
             '>I design and develop smart solutions always paying attention to details.</p>
-            <button className='mt-4 bg-verde hover:bg-verde-shadow text-black font-bold py-2 px-4 rounded '>Let's chat</button>
+            <button onClick={handleClick} className='mt-4 bg-verde hover:bg-verde-shadow text-black font-bold py-2 px-4 rounded '>Let's chat</button>
           </div>  
 
       </div> 

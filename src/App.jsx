@@ -1,9 +1,8 @@
 //Componentes
 
-
 import Navbar from './Navbar/Navbar';
 import Home from './Home';
-
+import { HomeTabsProvider } from './Contexto/HomeTabsContext';
 
 
 
@@ -20,7 +19,7 @@ import "bulma/css/bulma.css";
 
 // Hooks
 
-import { useEffect, useState } from 'react';
+
 import Footer from './Footer';
 
 
@@ -55,19 +54,19 @@ function App() {
    
     <div className="App">
    
-    
+   <HomeTabsProvider>
        {/* <Grids/>      */}
       {/* <Navbar action={activeColor} />  */}
       <Navbar /> 
       {/* Enviando props do scroll para o Navbar */}
-      <Home />
+      <Home/>
       <Tabs/>{/*
       <Skills/>
       <Projects/>
       <Contact/>  */}
       <Footer/>
       
- 
+      </HomeTabsProvider>
   
      </div>
 
