@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import './navbar.scss';
 import DarkMode from "../components/darkMode/DarkMode";
 import logo from "../assets/tabfolio.svg";

@@ -88,8 +88,8 @@ const About = () => {
 
          <div className="container ports">
             <h4>Repositórios</h4>
-        <a href="https://github.com/AndreMicael" target="blank"><div className="item  mb-3 flex gap-2 items-baseline"><div className="icon self-start"><FaGithub /></div> <p className="text-cinza">GitHub</p> <p className="text-cinza hover:text-blue-500"><FaExternalLinkAlt /> </p> </div></a> 
-        <a href="https://www.behance.net/andremicael" target="blank"> <div className="item  mb-3 flex gap-2 items-baseline"><div className="icon self-start"><FaSquareBehance /></div><p className="text-cinza">Behance</p> <p className="text-cinza hover:text-blue-500"><FaExternalLinkAlt /> </p> </div></a> 
+        <a href="https://github.com/AndreMicael" target="blank"><div className="item  mb-3 flex gap-2 items-baseline"><div className="icon text-purple-500 self-start"><FaGithub /></div> <p className="text-cinza">GitHub</p> <p className="text-cinza hover:text-blue-500"><FaExternalLinkAlt /> </p> </div></a> 
+        <a href="https://www.behance.net/andremicael" target="blank"> <div className="item  mb-3 flex gap-2 items-baseline"><div className="icon text-blue-500 self-start"><FaSquareBehance /></div><p className="text-cinza">Behance</p> <p className="text-cinza hover:text-blue-500"><FaExternalLinkAlt /> </p> </div></a> 
        </div>
        </div>
        </div>
