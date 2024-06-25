@@ -28,6 +28,7 @@
             border-radius: 8px;
             margin-bottom: 10px;
             padding: 2%;
+            
             display: flex;
             gap: 10px;
             
@@ -65,7 +66,7 @@
         }
 
         .icon {
-            color: #E56399;
+            color: variables.$verde;
             font-size: 20px;
             
             

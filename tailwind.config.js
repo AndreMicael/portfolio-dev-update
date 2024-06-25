@@ -18,9 +18,10 @@ module.exports = {
       colors: {
         'verde': '#23CE99',
         'verde-light': '#56ff88',
-        'verde-shadow': '#14a578',
+        'verde-shadow': '#177757',
         'cinza': '#898989',
         'preto': '#000000',
+        'rosa': '#E56399',
       },
      
     },
@@ -28,6 +29,7 @@ module.exports = {
   plugins: [
 
     flowbite.plugin(),
+    require('tailwind-scrollbar'),
 
   ],
 };

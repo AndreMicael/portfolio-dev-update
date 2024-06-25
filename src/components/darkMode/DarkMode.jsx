@@ -12,7 +12,7 @@ import Particles from "../../assets/emojis/particles.png";
 
 const DarkMode = () => {
   const [isSun, setIsSun] = useState(true);
-  const [isPart, setIsPart] = useState(false);
+  const [isPart, setIsPart] = useState(true);
   const [isCircle, setIsCircle] = useState(false);
 
   const handleClick = () => {

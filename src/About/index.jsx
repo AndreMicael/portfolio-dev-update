@@ -2,7 +2,7 @@ import "./about.scss";
 import { IoLogoJavascript } from "react-icons/io5";
 import { TiHtml5 } from "react-icons/ti";
 import { IoLogoCss3 } from "react-icons/io";
-import { FaReact,FaGithub } from "react-icons/fa";
+import { FaReact,FaGithub,FaDocker,FaAws,FaExternalLinkAlt  } from "react-icons/fa";
 import { RiTailwindCssFill,RiJavaLine } from "react-icons/ri";
 import { BiLogoPostgresql,BiLogoSpringBoot } from "react-icons/bi";
 import { FiFigma } from "react-icons/fi";
@@ -17,11 +17,12 @@ import { FaSquareBehance } from "react-icons/fa6";
 const About = () => {
   return (
     <div className="about-container container 
-    grid grid-flow-row lg:grid-flow-col gap-4
+    2xl:grid xl:grid 
+    lg:flex lg:flex-col sm:flex-col md:flex-col
      ">
     
        <div className=" text-about 
-        whitespace-normal text-lg
+        whitespace-normal text-lg px-10 mb-5
        ">
          <h3 className="mb-5">Quem sou eu</h3>
         <p>
@@ -51,6 +52,7 @@ const About = () => {
            <div className="item"><div className="icon"><IoLogoCss3 /></div><p>CSS3</p></div>
            <div className="item"><div className="icon"><IoLogoJavascript /></div><p>Javascript</p></div>
            <div className="item"><div className="icon"><FaReact /></div><p>React JS</p></div>
+           <div className="item"><div className="icon"><FaGithub /></div><p>GitHub</p></div>
            <div className="item"><div className="icon"><RiTailwindCssFill /></div><p>Tailwind</p></div>
          
        </div>
@@ -60,6 +62,8 @@ const About = () => {
         <div className="item"><div className="icon"><RiJavaLine /></div><p>Java</p></div>
         <div className="item"><div className="icon"><BiLogoSpringBoot /></div><p>Spring Boot</p></div>
         <div className="item"><div className="icon"><BiLogoPostgresql /></div><p>Postgres</p></div>
+        <div className="item"><div className="icon"><FaDocker /></div><p>Docker</p></div>
+        <div className="item"><div className="icon"><FaAws /></div><p>AWS</p></div>
         </div>
 
         <div className="skill">
@@ -72,6 +76,7 @@ const About = () => {
        
         </div>
         </div>
+        <div className="flex">
         <div className="container lang">
          
          <h4>Idiomas</h4>
@@ -83,8 +88,9 @@ const About = () => {
 
          <div className="container ports">
             <h4>Repositórios</h4>
-         <div className="item  mb-3 flex gap-2 items-baseline"><div className="icon self-start"><FaGithub /></div> <p>GitHub</p> </div>
-         <div className="item  gap-2 flex flexitems-baseline"><div className="icon self-start"><FaSquareBehance /></div><p>Behance</p></div>
+        <a href="https://github.com/AndreMicael" target="blank"><div className="item  mb-3 flex gap-2 items-baseline"><div className="icon self-start"><FaGithub /></div> <p className="text-cinza">GitHub</p> <p className="text-cinza hover:text-blue-500"><FaExternalLinkAlt /> </p> </div></a> 
+        <a href="https://www.behance.net/andremicael" target="blank"> <div className="item  mb-3 flex gap-2 items-baseline"><div className="icon self-start"><FaSquareBehance /></div><p className="text-cinza">Behance</p> <p className="text-cinza hover:text-blue-500"><FaExternalLinkAlt /> </p> </div></a> 
+       </div>
        </div>
        </div>
 

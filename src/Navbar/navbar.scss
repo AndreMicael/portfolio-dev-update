@@ -14,7 +14,7 @@ nav {
     background-color: rgba($color: #000, $alpha: 0.2);
 
     .brand {
-        width: 8vw;
+        
         cursor: pointer;
       
        
@@ -25,6 +25,30 @@ nav {
             box-sizing: border-box;
             
         }
+
+        .logo-img{
+            animation: esconder 2s ;
+        }
+        .text-animation {
+            animation: esconder2 2s ;
+            
+        }
+
+      
+
+        @keyframes esconder {
+            0% {
+              transform: translateY(0%);
+            }
+            50% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0%);
+            }
+          }
+
+          
     }
 
     .botao {

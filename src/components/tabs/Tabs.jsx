@@ -47,6 +47,7 @@ export const Tabs = () => {
 
       <div className="content">
       <div className=" overflow-y-auto 
+      scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-preto scrollbar-track-verde
     h-[70vh]">
         {Data.map((data, i) => (
           <div
