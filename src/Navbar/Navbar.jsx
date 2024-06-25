@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="flex justify-center items-center brand whitespace-nowrap ">
           <img 
             className='logo-img min-w-[7vw] flex-shrink-0 
-            xl:w-[7.5vw] lg:w-[9vw] md:w-[12vw] sm:w-[12vw]  w-[16vw]
+            xl:w-[7vw] lg:w-[9vw] md:w-[12vw] sm:w-[12vw]  w-[16vw]
             '
             
 

@@ -3,6 +3,8 @@
 import Navbar from './Navbar/Navbar';
 import Home from './Home';
 import { HomeTabsProvider } from './Contexto/HomeTabsContext';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -55,6 +57,7 @@ function App() {
     <div className="App">
    
    <HomeTabsProvider>
+   <ToastContainer />
        {/* <Grids/>      */}
       {/* <Navbar action={activeColor} />  */}
       <Navbar /> 

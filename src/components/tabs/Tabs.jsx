@@ -4,7 +4,7 @@ import "./Tabs.scss";
 import { HomeTabsContext } from '../../Contexto/HomeTabsContext';
 
 export const Tabs = () => {
-  const [activeTab, setActiveTab] = useState(0); // Estado para controlar a aba ativa
+  const [activeTab, setActiveTab] = useState(1); // Estado para controlar a aba ativa
   const { homeData, setHomeData } = useContext(HomeTabsContext); // Contexto para homeData e setHomeData (Esses dados vêm da página Home e passa para as Tabs por meio de contexto vindo o App.jsx)
   const tabRefs = useRef([]); // Referência para a aba que receberá o scrollIntoView
 
@@ -25,7 +25,7 @@ export const Tabs = () => {
 
   return (
     
-    <div className='tabs-container xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[70vw] whitespace-nowrap
+    <div className='tabs-container xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[70vw] 
    
     '>
   
