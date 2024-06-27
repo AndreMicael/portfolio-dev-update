@@ -16,15 +16,15 @@ const ProjectMockup = ({ project }) => {
       </div>
 
       <div className="col-span-2 pl-8 text-justify flex flex-col gap-4">
-        <h1>{titulo}</h1>
+        <p className="text-2xl text-verde font-semibold">{titulo}</p>
         <div className="project-desc">{desc}</div>
         <div className="flex justify-center gap-5">
           <button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
-            <div className="text-lg"><TbWorld /></div>
+            <div className="text-lg text-cyan-500"><TbWorld /></div>
             <p className="text-sm">Demo</p>
           </button>
           <button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
-            <div className="text-lg"><FaGithub /></div>
+            <div className="text-lg text-purple-500"><FaGithub /></div>
             <p className="text-sm">GitHub</p>
           </button>
         </div>
