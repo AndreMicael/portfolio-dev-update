@@ -14,7 +14,7 @@ const Springboot = <div className='text-green-500'><BiLogoSpringBoot /></div>;
 
 
 export const getProject = [
-  { id: 1, titulo: 'Ion Imóveis', desc: "A página tem como principal objetivo captar potenciais clientes para a imobiliária, fornecendo informações detalhadas sobre o empreendimento e incentivando a conversão através de formulários de contato e agendamentos de visitas.", stack: [HTML, CSS, Javascript], img: Projeto1 },
+  { id: 1, titulo: 'Ion Imóveis', desc: "A página tem como principal objetivo captar potenciais clientes para a imobiliária, fornecendo informações detalhadas sobre o empreendimento e incentivando a conversão através de formulários de contato e agendamentos de visitas.", stack: [HTML, CSS, Javascript], img: Projeto1, link: 'https://andremicael.github.io/Ion-Imoveis-LandingPage/',github:'https://github.com/AndreMicael/Ion-Imoveis-LandingPage' },
   { id: 2, titulo: 'My Book API / Site', desc: "Mussum Ipsum, cacilds vidis litro abertis. Nulla id gravida magna, ut semper sapien.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.", stack: [HTML, CSS,ReactJs,Java,Springboot], img: "https://via.placeholder.com/1920x1080" },
   { id: 3, titulo: 'Ion Imóveis', desc: "Mussum Ipsum, cacilds vidis litro abertis. Nulla id gravida magna, ut semper sapien.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.", stack: [HTML, CSS], img: "https://via.placeholder.com/1920x1080" },
   { id: 4, titulo: 'Ion Imóveis', desc: "Mussum Ipsum, cacilds vidis litro abertis. Nulla id gravida magna, ut semper sapien.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.", stack: [HTML, CSS], img: "https://via.placeholder.com/1920x1080" },

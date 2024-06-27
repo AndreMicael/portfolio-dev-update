@@ -5,7 +5,7 @@ import { FaHtml5, FaCss3Alt } from "react-icons/fa6";
 import { RiJavascriptFill } from "react-icons/ri";
 
 const ProjectMockup = ({ project }) => {
-  const { titulo, desc, img, stack } = project;
+  const { titulo, desc, img, stack,link,github } = project;
 
   return (
     <div className="grid grid-cols-6 mockup">
@@ -19,14 +19,14 @@ const ProjectMockup = ({ project }) => {
         <p className="text-2xl text-verde font-semibold">{titulo}</p>
         <div className="project-desc">{desc}</div>
         <div className="flex justify-center gap-5">
-          <button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
+         <a href={link} target="blank"><button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
             <div className="text-lg text-cyan-500"><TbWorld /></div>
-            <p className="text-sm">Demo</p>
-          </button>
-          <button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
+            <p className="text-sm text-gray-400">Demo</p>
+          </button></a> 
+          <a href={github} target="blank"><button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
             <div className="text-lg text-purple-500"><FaGithub /></div>
-            <p className="text-sm">GitHub</p>
-          </button>
+            <p className="text-sm text-gray-400">GitHub</p>
+          </button></a> 
         </div>
       </div>
 
