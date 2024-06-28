@@ -62,3 +62,26 @@
 .mockup {
     border-bottom: 2px solid #434343;
 }
+
+.img-container img {
+   
+    height: auto;
+    position: absolute;      
+    top:0;
+    
+      
+}
+
+.img-container img:hover{
+    animation: moveUpAndDown 3s ease;
+}
+
+
+@keyframes moveUpAndDown {
+    0% {
+        top: 0%;
+    }
+    100% {
+       top: -250%;
+    }
+}
