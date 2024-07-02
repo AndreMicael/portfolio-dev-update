@@ -30,3 +30,7 @@ jobs:
           password: ${{ secrets.ftp_password }}
           local-dir: ./build/  # Ajuste este caminho para apontar para o diretório de build do seu projeto
           server-dir: public_html/  # Diretório de destino no servidor
+          port: 21
+          protocol: ftp
+          
+          
