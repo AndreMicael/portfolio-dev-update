@@ -6,8 +6,8 @@ import { TbBackground } from "react-icons/tb";
 import { Popover } from "flowbite-react";
 import ParticlesComponent from '../particles';
 import Circles from '../circles';
-import NewMoon from "../../assets/emojis/new-moon.png";
-import Sun from "../../assets/emojis/sun.png";
+// import NewMoon from "../../assets/emojis/new-moon.png";
+// import Sun from "../../assets/emojis/sun.png";
 import Particles from "../../assets/emojis/particles.png";
 
 const DarkMode = () => {
@@ -15,9 +15,9 @@ const DarkMode = () => {
   const [isPart, setIsPart] = useState(true);
   const [isCircle, setIsCircle] = useState(false);
 
-  const handleClick = () => {
-    setIsSun(!isSun);
-  };
+  // const handleClick = () => {
+  //   setIsSun(!isSun);
+  // };
 
   const handlePartChange = (e) => {
     const value = e.target.value;
