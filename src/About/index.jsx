@@ -19,10 +19,13 @@ const About = () => {
     <div className="about-container container 
     2xl:grid xl:grid 
     lg:flex lg:flex-col sm:flex-col md:flex-col
+    
      ">
     
        <div className=" text-about 
-        whitespace-normal text-lg px-10 mb-5
+        whitespace-normal  mb-5 
+        xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0
+        xl:text-lglg:text-lg sm:text-lg md:text-lg text-sm
        ">
          <h3 className="mb-5">Quem sou eu</h3>
         <p>
@@ -42,7 +45,7 @@ const About = () => {
 
        </div> 
 
-       <div className="container  px-10"> 
+       <div className="container  xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0"> 
 
         <h3 className="mb-5">Minhas Habilidades</h3>
         <div className="grid">
@@ -76,12 +79,14 @@ const About = () => {
        
         </div>
         </div>
-        <div className="flex">
+        <div className="flex 
+        xl:flex-row lg:flex-row sm:flex-row md:flex-row flex-col gap-5
+        ">
         <div className="container lang">
          
          <h4>Idiomas</h4>
          <div className="">
-         <div className="item flex gap-2 items-baseline "><div className="icon self-start"><img src={English} alt="Inglês" /></div><p>Inglês</p><h6>Speaking, Listening e Writing Avançado</h6></div>
+         <div className="item flex gap-2 items-baseline "><div className="icon self-start"><img src={English} alt="Inglês" /></div><p>Inglês</p><h6 className="">Speaking, Listening e Writing Avançado</h6></div>
          <div className="item flex gap-2 items-baseline "><div className="icon self-start"><img src={Portuguese} alt="Portugues" /></div><p>Português</p><h6>Nativo</h6></div>
          </div>
          </div>

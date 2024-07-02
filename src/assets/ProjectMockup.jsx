@@ -9,12 +9,13 @@ const ProjectMockup = ({ project }) => {
 
   return (
     // Mockup dos projetos. É um grid que divide Imagem e Descrição no meio.
-    <div className="grid grid-cols-6 mockup "> 
+    <div className="grid grid-cols-6 mockup  "> 
       {/* Imagem do projeto */}
       <div
-        className="container relative img-container rounded-2xl overflow-hidden h-[50vh]       
-      xl:col-span-4 lg:col-span-4 md:col-span-6 sm:col-span-4 col-span-6  
-      
+        className="container  relative img-container rounded-2xl overflow-hidden h-[50vh]       
+      xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-6  
+      xl:h-[50vh] lg:h-[50vh] md:h-[50vh] sm:h-[40vh] xs:h-[28vh]
+    
       "
       >
         <img className="rounded-lg" src={img} alt={desc} />

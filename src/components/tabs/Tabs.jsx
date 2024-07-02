@@ -25,7 +25,7 @@ export const Tabs = () => {
 
   return (
     
-    <div className='tabs-container xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[70vw] 
+    <div className='tabs-container xl:w-[70vw] lg:w-[85vw] md:w-[85vw] sm:w-[85vw] w-[85vw] 
    
     '>
   
@@ -52,7 +52,8 @@ export const Tabs = () => {
         {Data.map((data, i) => (
           <div
            
-            className={`desc ${activeTab === i ? 'active' : ''}`}
+            className={`desc xl:p-12 lg:p-12 sm:p-12 md:p-12 xs:p-5
+               ${activeTab === i ? 'active' : ''}`}
             key={i}
           >
             {data.desc}
