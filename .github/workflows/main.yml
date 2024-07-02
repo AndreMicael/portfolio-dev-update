@@ -12,11 +12,21 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
+      - name: Use Node.js 20
+        uses: actions/setup-node@v2.5.2  # Escolha uma versão compatível com Node.js 20
+        with:
+          node-version: '20'
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build --prod
+    
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          local-dir: ./build  # Adjust this path to point to your build directory
-          server-dir: public_html/  # Destination directory on the server
+          local-dir: ./build/  # Ajuste este caminho para apontar para o diretório de build do seu projeto
+          server-dir: public_html/  # Diretório de destino no servidor
