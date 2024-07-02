@@ -1,6 +1,6 @@
 import "./dark.scss";
-import { LuSunMedium } from "react-icons/lu";
-import { IoMdMoon } from "react-icons/io";
+// import { LuSunMedium } from "react-icons/lu";
+// import { IoMdMoon } from "react-icons/io";
 import { useState } from "react";
 import { TbBackground } from "react-icons/tb";
 import { Popover } from "flowbite-react";
@@ -11,7 +11,7 @@ import Circles from '../circles';
 import Particles from "../../assets/emojis/particles.png";
 
 const DarkMode = () => {
-  const [isSun, setIsSun] = useState(true);
+  // const [isSun, setIsSun] = useState(true);
   const [isPart, setIsPart] = useState(true);
   const [isCircle, setIsCircle] = useState(false);
 

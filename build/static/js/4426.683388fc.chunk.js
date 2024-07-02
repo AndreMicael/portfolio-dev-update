@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio_dev_2024=self.webpackChunkportfolio_dev_2024||[]).push([[4426],{4426:(e,o,t)=>{async function a(e){let o=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("color",(async e=>{const{ColorUpdater:o}=await t.e(8800).then(t.bind(t,8800));return new o(e)}),o)}t.d(o,{loadColorUpdater:()=>a})}}]);
-//# sourceMappingURL=4426.683388fc.chunk.js.map
