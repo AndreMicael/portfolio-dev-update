@@ -15,7 +15,7 @@ jobs:
           ref: main  # Specify the branch explicitly if needed
 
       - name: Use Node.js 20
-        uses: actions/setup-node@v2.5.3  # Update to a version that supports Node.js 20
+        uses: actions/setup-node@v2.5.1  # Update to a version that supports Node.js 20
         with:
           node-version: '20'
       
@@ -27,7 +27,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.HOST }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build  # Adjust as per your build directory
