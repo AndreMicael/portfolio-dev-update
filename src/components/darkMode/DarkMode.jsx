@@ -35,7 +35,7 @@ const DarkMode = () => {
 
   return (
     <div className="flex gap-2">
-      <Popover
+      {/* <Popover
         trigger="hover"
         aria-labelledby="popover-night-mode"
         content={
@@ -52,7 +52,7 @@ const DarkMode = () => {
         <div onClick={handleClick} className={`botao-dark p-0 ${isSun ? 'inactive' : 'active'}`}>
           {isSun ? <IoMdMoon /> : <LuSunMedium />}
         </div>
-      </Popover>
+      </Popover> */}
 
       <Popover
         trigger="hover"

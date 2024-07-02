@@ -1,5 +1,5 @@
 import './home.scss';
-import avatar from '../assets/avatar.png'
+import avatar from '../assets/IMG_7153.png'
 import React, { useContext } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -62,8 +62,8 @@ const Home = ({onAction}) => {
             <p className=' mt-2 text-4sm text-white             
             whitespace-normal
             xl:w-[30vw] lg:w-[40vw] md:w-[50vw] sm:w-[53vw] w-[45vw] 
-            '>I design and develop smart solutions always paying attention to details.</p>
-            <button onClick={handleClick} className='mt-4 bg-verde hover:bg-verde-shadow text-black font-bold py-2 px-4 rounded '>Let's chat</button>
+            '>Minha missão é criar sites e sistemas que unam visual impactante com alta funcionalidade.</p>
+            <button onClick={handleClick} className='mt-4 bg-verde hover:bg-verde-shadow text-black font-bold py-2 px-2 rounded '>Vamos conversar</button>
           </div>  
 
       </div> 

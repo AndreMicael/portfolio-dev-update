@@ -18,7 +18,7 @@ const Navbar = () => {
             alt="Logo Tabfólio" 
           />
           <h1 className='content-center text-xl ml-2'>
-            <span className='text-verde font-bold'>André</span> Micael
+            {/* <span className='text-verde font-bold'>André</span> Micael */}
           </h1>
         </div>
         <div className='botao'>
