@@ -3,8 +3,8 @@ import Projeto1 from "../assets/projeto1.png";
 import Projeto2 from "../assets/projeto2.png";
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt,FaReact  } from "react-icons/fa";
-import { RiJavascriptFill ,RiJavaLine} from "react-icons/ri";
-import { BiLogoSpringBoot } from "react-icons/bi";
+import { RiJavascriptFill } from "react-icons/ri";
+// import { BiLogoSpringBoot } from "react-icons/bi";
 import { SiPuppeteer } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 
@@ -13,8 +13,8 @@ const HTML = <div className='text-orange-400'><FaHtml5 /></div>;
 const CSS = <div className='text-blue-500'><FaCss3Alt /></div>;
 const Javascript = <div className='text-amber-300'><RiJavascriptFill /></div>;
 const ReactJs = <div className='text-cyan-400'><FaReact /></div>;
-const Java = <div className='text-orange-500'><RiJavaLine /></div>;
-const Springboot = <div className='text-green-500'><BiLogoSpringBoot /></div>;
+// const Java = <div className='text-orange-500'><RiJavaLine /></div>;
+// const Springboot = <div className='text-green-500'><BiLogoSpringBoot /></div>;
 const Puppeteer = <div className='text-green-500'><SiPuppeteer /></div>
 const NextJS = <div className='text-purple-500'><RiNextjsFill /></div>
 

@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaExternalLinkAlt ,FaLinkedin ,FaCopy } from "react-icons/fa";
 import { toast} from 'react-toastify';
 import { MdEmail } from "react-icons/md";
-import Voltar from './voltar';
+
 
 
 
