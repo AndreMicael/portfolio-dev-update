@@ -19,6 +19,7 @@
     "@tsparticles/react": "^3.0.0",
     "bulma": "^1.0.0",
     "flowbite-react": "^0.10.1",
+    "netlify-cli": "^17.33.5",
     "react": "^18.3.1",
     "react-apple-emojis": "^2.2.1",
     "react-dom": "^18.3.1",
