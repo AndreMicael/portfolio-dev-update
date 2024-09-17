@@ -1,4 +1,4 @@
-import "./Footer.scss"
+// import "./Footer.scss"
 import logo from "../assets/tabfolio.svg";
 
 const Footer = () => {

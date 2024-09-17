@@ -2,9 +2,7 @@ import "./projects.scss"
 import ProjectMockup from "../assets/ProjectMockup"
 import {getProject} from "../assets/texts"
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 
 
 const Projects = () => {
