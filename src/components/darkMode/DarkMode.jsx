@@ -8,7 +8,7 @@ import ParticlesComponent from '../particles';
 import Circles from '../circles';
 // import NewMoon from "../../assets/emojis/new-moon.png";
 // import Sun from "../../assets/emojis/sun.png";
-import Particles from "../../assets/emojis/particles.png";
+import Particles from "../../assets/emojis/particles.webp";
 
 const DarkMode = () => {
   // const [isSun, setIsSun] = useState(true);

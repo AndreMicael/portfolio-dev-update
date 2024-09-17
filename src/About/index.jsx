@@ -9,8 +9,8 @@ import { FiFigma } from "react-icons/fi";
 import { SiAdobeillustrator,SiAdobephotoshop,SiBlender  } from "react-icons/si";
 
 import { GiRhinocerosHorn } from "react-icons/gi";
-import Portuguese from "../assets/emojis/brasil.png";
-import English from "../assets/emojis/usa.png";
+import Portuguese from "../assets/emojis/brasil.webp";
+import English from "../assets/emojis/usa.webp";
 import { FaSquareBehance } from "react-icons/fa6";
 
 
