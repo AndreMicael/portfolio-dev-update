@@ -55,7 +55,7 @@ const ProjectMockup = ({ project }) => {
         </div>
       </div>
      {/* Tecnologias utilizadas */}
-      <div className="col-span-6 mt-4 pb-6 mx-auto">
+      <div className="col-span-4 mt-4 pb-6 mx-auto ">
         <div className="text-2xl flex gap-2 justify-start ">
           {stack.map((icon, index) => (
             <div
