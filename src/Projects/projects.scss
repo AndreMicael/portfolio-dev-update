@@ -1,6 +1,10 @@
 @use '../variables.scss';
 @use "../../node_modules/bulma/sass/utilities/mixins";
 
+* {
+  box-sizing: border-box;
+}
+
 .projetos-container {
 .project-img {
 
@@ -8,6 +12,7 @@
 
     img {
         overflow: hidden;
+        border: 1px solid;
     }
   
 }
@@ -52,6 +57,7 @@
 
 .img-container {
     border: 1.8px solid variables.$branco;
+    object-fit: cover;
     
 }
 
@@ -73,6 +79,9 @@
       
 }
 
+
+
+
 // .img-container img:hover{
 //     animation: moveUpAndDown 3s ease;
 // }
@@ -86,3 +95,7 @@
 //        top: -250%;
 //     }
 // }
+
+.dashed2 {
+    border: 1px dashed red;
+}

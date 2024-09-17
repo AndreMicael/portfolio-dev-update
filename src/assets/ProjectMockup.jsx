@@ -9,22 +9,24 @@ const ProjectMockup = ({ project }) => {
 
   return (
     // Mockup dos projetos. É um grid que divide Imagem e Descrição no meio.
-    <div className="grid grid-cols-6 mockup  "> 
+    <div className="grid grid-cols-6 mockup  overflow-hidden "> 
       {/* Imagem do projeto */}
       <div
-        className="container  relative img-container rounded-2xl overflow-hidden h-[50vh]       
-      xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-6  
-      xl:h-[50vh] lg:h-[50vh] md:h-[50vh] sm:h-[40vh] xs:h-[28vh]
+        className=" container relative img-container rounded-2xl overflow-hidden w-full max-w-full 
+      h-[50vh] xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-4  
+      xl:h-[50vh] lg:h-[50vh] md:h-[50vh] sm:h-[40vh] xs:h-[20vh]
+      
     
       "
       >
-        <img className="rounded-lg" src={img} alt={desc} />
+        <img className="rounded-lg " src={img} alt={desc} />
       </div>
       {/* Descrição do Projeto */}
       <div
         className="text-justify flex flex-col gap-4
-       xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-4 col-span-6 
-       xl:pl-8 lg:pl-8 sm:pl-0 md:pl-0 pl-0
+       xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-4 col-span-4
+       px-4 
+       xl:pl-8 lg:pl-8 sm:pl-0 md:pl-0 pl-0 
       
       "
       >
@@ -53,7 +55,7 @@ const ProjectMockup = ({ project }) => {
         </div>
       </div>
      {/* Tecnologias utilizadas */}
-      <div className="col-span-6 mt-4 pb-6">
+      <div className="col-span-6 mt-4 pb-6 mx-auto">
         <div className="text-2xl flex gap-2 justify-start ">
           {stack.map((icon, index) => (
             <div
