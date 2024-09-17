@@ -1,54 +1,27 @@
-//Componentes
 
-import Navbar from './Navbar/Navbar';
-import Home from './Home';
+import React, { Suspense } from 'react';
+// import Navbar from './Navbar/Navbar';
+// import Home from './Home';
+// import { Tabs } from './components/tabs/Tabs';
+// import Footer from './Footer';
+
 import { HomeTabsProvider } from './Contexto/HomeTabsContext';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-
-
-import { Tabs } from './components/tabs/Tabs';
-
-
-
-
-
-// Estilos
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
 import "bulma/css/bulma.css";
 
-// Hooks
 
-
-import Footer from './Footer';
-
-
-
-
+const Navbar = React.lazy(() => import('./Navbar/Navbar'));
+const Home = React.lazy(() => import('./Home'));
+const Tabs = React.lazy(() => import('./components/tabs/Tabs'));
+const Footer = React.lazy(() => import('./Footer'));
 
 
 function App() {
 
-// 2 - Criar um estado para o scroll
-// const [activeColor, setActiveColor] = useState(false);
-
-// 1 - Criar um use Effect para o scroll
-// useEffect(function(){
-
-//   function onScroll(){
-//     if(window.scrollY > 15){
-//       setActiveColor(true);
-//     }
-//     else{
-//       setActiveColor(false);
-//     }
-//   }
-
-//     window.addEventListener('scroll', onScroll);
-
-// },[]);
 
 
 
@@ -57,18 +30,13 @@ function App() {
     <div className="App">
    
    <HomeTabsProvider>
-   <ToastContainer />
-       {/* <Grids/>      */}
-      {/* <Navbar action={activeColor} />  */}
-      <Navbar /> 
-      {/* Enviando props do scroll para o Navbar */}
-      <Home/>
-      <Tabs/>{/*
-      <Skills/>
-      <Projects/>
-      <Contact/>  */}
-      <Footer/>
-      
+        <ToastContainer />
+        <Suspense fallback={<div>Carregando...</div>}>
+          <Navbar />
+          <Home />
+          <Tabs />
+          <Footer />
+        </Suspense>
       </HomeTabsProvider>
   
      </div>
