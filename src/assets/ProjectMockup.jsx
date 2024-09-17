@@ -13,7 +13,7 @@ const ProjectMockup = ({ project }) => {
       {/* Imagem do projeto */}
       <div
         className=" container relative img-container rounded-2xl overflow-hidden w-full max-w-full 
-      h-[50vh] xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-4  
+      h-[50vh] xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-2  
       xl:h-[50vh] lg:h-[50vh] md:h-[50vh] sm:h-[40vh] xs:h-[20vh]
       
     
@@ -24,7 +24,7 @@ const ProjectMockup = ({ project }) => {
       {/* Descrição do Projeto */}
       <div
         className="text-justify flex flex-col gap-4
-       xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-4 col-span-4
+       xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-4 col-span-3
        px-4 
        xl:pl-8 lg:pl-8 sm:pl-0 md:pl-0 pl-0 
       
