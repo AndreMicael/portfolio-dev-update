@@ -1,6 +1,6 @@
 import React from 'react';
-import Projeto1 from "../assets/projeto1.png";
-import Projeto2 from "../assets/projeto2.png";
+import Projeto1 from "../assets/webp/projeto1.webp";
+import Projeto2 from "../assets/webp/projeto2.webp";
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt,FaReact  } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";

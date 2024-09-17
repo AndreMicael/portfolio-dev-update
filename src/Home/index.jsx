@@ -1,5 +1,5 @@
 import './home.scss';
-import avatar from '../assets/IMG_7153.png'
+import avatar from '../assets/webp/IMG_7153.webp'
 import React, { useContext } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

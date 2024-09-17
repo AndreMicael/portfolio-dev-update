@@ -2,6 +2,7 @@
   "name": "portfolio-dev-2024",
   "version": "0.1.0",
   "private": true,
+ 
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -35,7 +36,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-bulma": "sass --load-path=node_modules my-bulma-project.scss my-bulma-project.css"
+    "build-bulma": "sass --load-path=node_modules my-bulma-project.scss my-bulma-project.css",
+    "convert-webp": "node src/scripts/convert-to-webp.js"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +59,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "imagemin": "^9.0.0",
+    "imagemin-webp": "^8.0.0",
     "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.3"
   }
