@@ -1,23 +1,14 @@
 import "./dark.scss";
-// import { LuSunMedium } from "react-icons/lu";
-// import { IoMdMoon } from "react-icons/io";
 import { useState } from "react";
 import { TbBackground } from "react-icons/tb";
 import { Popover } from "flowbite-react";
 import ParticlesComponent from '../particles';
 import Circles from '../circles';
-// import NewMoon from "../../assets/emojis/new-moon.png";
-// import Sun from "../../assets/emojis/sun.png";
 import Particles from "../../assets/emojis/particles.webp";
 
 const DarkMode = () => {
-  // const [isSun, setIsSun] = useState(true);
   const [isPart, setIsPart] = useState(true);
   const [isCircle, setIsCircle] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsSun(!isSun);
-  // };
 
   const handlePartChange = (e) => {
     const value = e.target.value;
@@ -35,25 +26,6 @@ const DarkMode = () => {
 
   return (
     <div className="flex gap-2">
-      {/* <Popover
-        trigger="hover"
-        aria-labelledby="popover-night-mode"
-        content={
-          <div className="w-64 text-sm text-gray-900 dark:text-gray-400">
-            <div className="border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
-              <h3 id="popover-night-mode" className="font-semibold text-gray-900 dark:text-white">Modo Noturno</h3>
-            </div>
-            <div className="px-3 py-2">
-              <p>Alterne entre o modo claro <img className="inline" width='25' src={Sun} alt="Emoji Sol" /> e o modo noturno <img className="inline" width='25' src={NewMoon} alt="Emoji Lua" />.</p>
-            </div>
-          </div>
-        }
-      >
-        <div onClick={handleClick} className={`botao-dark p-0 ${isSun ? 'inactive' : 'active'}`}>
-          {isSun ? <IoMdMoon /> : <LuSunMedium />}
-        </div>
-      </Popover> */}
-
       <Popover
         trigger="hover"
         aria-labelledby="popover-background-options"
@@ -106,7 +78,10 @@ const DarkMode = () => {
           </div>
         }
       >
-        <div className={`botao-dark p-0 ${isPart || isCircle ? 'active' : 'inactive'}`}>
+        <div 
+          className={`botao-dark p-0 ${isPart || isCircle ? 'active' : 'inactive'}`}
+          style={!isPart && !isCircle ? { backgroundColor: '#252527' } : {}}
+        >
           <TbBackground />
           {isPart ? <ParticlesComponent id="particles" /> : ''}
           {isCircle ? <Circles id="particles" /> : ''}
