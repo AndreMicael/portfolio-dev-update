@@ -14,7 +14,7 @@ const ProjectMockup = ({ project }) => {
       <div
         className=" container relative img-container rounded-2xl overflow-hidden w-full max-w-full 
       h-[50vh] xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-2  
-      xl:h-[50vh] lg:h-[50vh] md:h-[50vh] sm:h-[40vh] xs:h-[20vh]
+      xl:h-[48vh] lg:h-[48vh] md:h-[48vh] sm:h-[40vh] xs:h-[20vh]
       
     
       "
