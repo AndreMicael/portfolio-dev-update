@@ -2,11 +2,13 @@ import "./about.scss";
 import { IoLogoJavascript } from "react-icons/io5";
 import { TiHtml5 } from "react-icons/ti";
 import { IoLogoCss3 } from "react-icons/io";
-import { FaReact,FaGithub,FaDocker,FaAws,FaExternalLinkAlt  } from "react-icons/fa";
+import { FaReact,FaGithub,FaExternalLinkAlt  } from "react-icons/fa";
 import { RiTailwindCssFill,RiJavaLine } from "react-icons/ri";
-import { BiLogoPostgresql,BiLogoSpringBoot } from "react-icons/bi";
+// import { BiLogoPostgresql,BiLogoSpringBoot } from "react-icons/bi";
 import { FiFigma } from "react-icons/fi";
+import { FaDatabase } from "react-icons/fa6";
 import { SiAdobeillustrator,SiAdobephotoshop,SiBlender  } from "react-icons/si";
+import { SiPhp } from "react-icons/si";
 
 import { GiRhinocerosHorn } from "react-icons/gi";
 import Portuguese from "../assets/emojis/brasil.webp";
@@ -63,10 +65,10 @@ const About = () => {
        <div className="skill">
         <h4>Back-End</h4>
         <div className="item"><div className="icon"><RiJavaLine /></div><p>Java</p></div>
-        <div className="item"><div className="icon"><BiLogoSpringBoot /></div><p>Spring Boot</p></div>
-        <div className="item"><div className="icon"><BiLogoPostgresql /></div><p>Postgres</p></div>
-        <div className="item"><div className="icon"><FaDocker /></div><p>Docker</p></div>
-        <div className="item"><div className="icon"><FaAws /></div><p>AWS</p></div>
+        <div className="item"><div className="icon"><SiPhp /></div><p>PHP</p></div>
+        <div className="item"><div className="icon"><FaDatabase /></div><p>Banco de Dados</p></div>
+     
+        
         </div>
 
         <div className="skill">
