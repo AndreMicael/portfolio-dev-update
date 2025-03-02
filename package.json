@@ -24,6 +24,7 @@
     "react-apple-emojis": "^2.2.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
+    "react-router-dom": "^7.2.0",
     "react-scripts": "^5.0.1",
     "react-toastify": "^10.0.5",
     "sass": "^1.77.1",
@@ -35,7 +36,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-bulma": "sass --load-path=node_modules my-bulma-project.scss my-bulma-project.css"
- 
   },
   "eslintConfig": {
     "extends": [

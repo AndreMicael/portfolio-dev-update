@@ -1,48 +1,43 @@
-
-import React, { Suspense } from 'react';
-// import Navbar from './Navbar/Navbar';
-// import Home from './Home';
-// import { Tabs } from './components/tabs/Tabs';
-// import Footer from './Footer';
-
-import { HomeTabsProvider } from './Contexto/HomeTabsContext';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-
-import '@fortawesome/fontawesome-free/css/all.css';
-import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { Suspense } from "react";
+import { HomeTabsProvider } from "./Contexto/HomeTabsContext";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "./App.scss";
 import "bulma/css/bulma.css";
+const Projects = React.lazy(() => import("./Pages/Projects"));
+const ProjectDetail = React.lazy(() => import("./Pages/ProjectDetail"));
 
-
-const Navbar = React.lazy(() => import('./Navbar/Navbar'));
-const Home = React.lazy(() => import('./Home'));
-const Tabs = React.lazy(() => import('./components/tabs/Tabs'));
-const Footer = React.lazy(() => import('./Footer'));
-
+const Home = React.lazy(() => import("./Home"));
+const Navbar = React.lazy(() => import("./Navbar/Navbar"));
+const Tabs = React.lazy(() => import("./components/tabs/Tabs"));
+const Footer = React.lazy(() => import("./Footer"));
 
 function App() {
-
-
-
-
   return (
-   
-    <div className="App">
-   
-   <HomeTabsProvider>
+    <Router>
+      <HomeTabsProvider>
         <ToastContainer />
         <Suspense fallback={<div>Carregando...</div>}>
-          <Navbar />
-          <Home />
-          <Tabs />
-          <Footer />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Navbar />
+                  <Home />
+                  <Tabs />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="/projetos" element={<Projects />} />
+            <Route path="/projetos/:id" element={<ProjectDetail />} />
+          </Routes>
         </Suspense>
       </HomeTabsProvider>
-  
-     </div>
-
-    
-  
+    </Router>
   );
 }
 

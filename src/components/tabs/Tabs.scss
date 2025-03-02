@@ -80,6 +80,14 @@
             min-height: 25rem;
             display: none;
             animation: fadeIn 0.2s ease-in-out;
+            margin-bottom: 2rem;
+            
+            // Remover bordas e cantos arredondados no mobile
+            @media (max-width: 768px) {
+                border-radius: 0;
+                border: none;
+                background-color: transparent !important;
+            }
         }
         .desc.active {
             display: block;
@@ -95,10 +103,38 @@
         // }
     }
 
-
+    // Ajustar altura do container no mobile
+    @media (max-width: 768px) {
+        .content {
+            height: auto;
+            overflow: visible;
+            
+            > div {
+                height: auto;
+            }
+        }
+    }
 }
 
+// Estilos para as seções mobile
+.mobile-section {
+  width: 100%;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  border-radius: 0.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
+// Ajustar o container das abas para desktop
+.tabs-container {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
 
 @keyframes fadeIn {
     0%{

@@ -1,0 +1,38 @@
+@use "../../variables.scss";
+
+.project-card {
+  @apply relative overflow-hidden;
+
+  &:hover {
+    .project-overlay {
+      opacity: 1;
+    }
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.tech-stack {
+  @apply flex flex-wrap gap-2 justify-center;
+
+  .tech-item {
+    @apply p-2 bg-gray-800 rounded-full text-sm;
+  }
+}
+
+// Mobile optimizations
+@media (max-width: 640px) {
+  .project-card {
+    img {
+      height: 200px;
+    }
+  }
+
+  .tech-stack {
+    .tech-item {
+      @apply p-1.5 text-xs;
+    }
+  }
+}

@@ -8,55 +8,38 @@ const ProjectMockup = ({ project }) => {
   const { titulo, desc, img, stack, link, github } = project;
 
   return (
-    // Mockup dos projetos. É um grid que divide Imagem e Descrição no meio.
-    <div className="grid grid-cols-6 mockup  overflow-hidden "> 
-      {/* Imagem do projeto */}
-      <div
-        className=" container relative img-container rounded-2xl overflow-hidden w-full max-w-full 
-      h-[50vh] xl:col-span-4 lg:col-span-3 md:col-span-6 sm:col-span-4 col-span-2  
-      xl:h-[48vh] lg:h-[48vh] md:h-[48vh] sm:h-[40vh] xs:h-[20vh]
-      
-    
-      "
-      >
-        <img className="rounded-lg " src={img} alt={desc} />
-      </div>
-      {/* Descrição do Projeto */}
-      <div
-        className="text-justify flex flex-col gap-4
-       xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-4 col-span-3
-       px-4 
-       xl:pl-8 lg:pl-8 sm:pl-0 md:pl-0 pl-0 
-      
-      "
-      >
-        <p className="text-2xl text-verde font-semibold">{titulo}</p>
-        <div className="project-desc text-sm2 mt-0 sm:mt-[-5vw] md:mt-[-3vw]">
-          {desc}
+    <div className="border-b-2 pb-8 border-slate-600">
+      <div className="flex flex-col md:flex-row gap-4 mockup overflow-hidden md:p-0  p-4">
+        {/* Container da imagem com proporção 16:9 */}
+        <div
+          className="relative border-[2px] border-slate-600  
+          xs:h-[50vw] lg:h-[18vw] w-full
+     
+     md:w-2/4 rounded-3xl overflow-hidden"
+        >
+          <img
+            className="absolute inset-0 object-cover w-full h-full"
+            src={img}
+            alt={desc}
+          />
         </div>
-        <div className="flex justify-center gap-5">
-          <a href={link} target="blank">
-            {/* Botões com o link da Demonstração do Projeto e link do repositório */}
-            <button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
-              <div className="text-lg text-cyan-500">
-                <TbWorld />
-              </div>
-              <p className="text-sm text-gray-400">Demo</p>
-            </button>
-          </a>
-          <a href={github} target="blank">
-            <button className="botao-projeto px-5 py-2 rounded-3xl flex gap-1 items-center hover:bg-gray-700">
-              <div className="text-lg text-purple-500">
-                <FaGithub />
-              </div>
-              <p className="text-sm text-gray-400">GitHub</p>
-            </button>
-          </a>
+
+        {/* Descrição do Projeto */}
+        <div className="flex flex-col justify-between md:w-2/4   xs:px-0 xl:px-4">
+          <div className="flex flex-col">
+            <p className="text-xl  md:text-2xl text-verde font-semibold">
+              {titulo}
+            </p>
+            <div className="project-desc p-0 text-sm md:text-base mt-2">
+              {desc}
+            </div>
+          </div>
         </div>
       </div>
-     {/* Tecnologias utilizadas */}
-      <div className="col-span-4 mt-4 pb-6 mx-auto ">
-        <div className="text-2xl flex gap-2 justify-start ">
+
+      {/* Tecnologias utilizadas - Mover para baixo da imagem */}
+      <div className="mt-4 w-full">
+        <div className="flex flex-wrap gap-2 justify-start pl-4">
           {stack.map((icon, index) => (
             <div
               key={index}
@@ -66,6 +49,22 @@ const ProjectMockup = ({ project }) => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Botões */}
+      <div className="flex justify-center gap-4 mt-4">
+        <a href={link} target="blank" rel="noopener noreferrer">
+          <button className="botao-projeto px-4 py-2 rounded-3xl flex gap-2 items-center hover:bg-gray-700">
+            <TbWorld className="text-lg text-cyan-500" />
+            <span className="text-sm text-gray-400">Demo</span>
+          </button>
+        </a>
+        <a href={github} target="blank" rel="noopener noreferrer">
+          <button className="botao-projeto px-4 py-2 rounded-3xl flex gap-2 items-center hover:bg-gray-700">
+            <FaGithub className="text-lg text-purple-500" />
+            <span className="text-sm text-gray-400">GitHub</span>
+          </button>
+        </a>
       </div>
     </div>
   );
