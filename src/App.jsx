@@ -6,11 +6,11 @@ import { ToastContainer } from "react-toastify";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.scss";
 import "bulma/css/bulma.css";
-const Projects = React.lazy(() => import("./Pages/Projects"));
+const Projects = React.lazy(() => import("./Projects"));
 const ProjectDetail = React.lazy(() => import("./Pages/ProjectDetail"));
 
 const Home = React.lazy(() => import("./Home"));
-const Navbar = React.lazy(() => import("./Navbar/Navbar"));
+// const Navbar = React.lazy(() => import("./Navbar/Navbar"));
 const Tabs = React.lazy(() => import("./components/tabs/Tabs"));
 const Footer = React.lazy(() => import("./Footer"));
 
@@ -25,7 +25,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <Navbar />
+                  {/* <Navbar /> */}
                   <Home />
                   <Tabs />
                   <Footer />
@@ -33,7 +33,7 @@ function App() {
               }
             />
             <Route path="/projetos" element={<Projects />} />
-            <Route path="/projetos/:id" element={<ProjectDetail />} />
+            <Route path="/projetos/:slug" element={<ProjectDetail />} />
           </Routes>
         </Suspense>
       </HomeTabsProvider>

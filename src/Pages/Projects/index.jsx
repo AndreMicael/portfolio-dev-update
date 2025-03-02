@@ -1,4 +1,3 @@
-import { getProject } from "../../assets/texts";
 import { TbArrowBackUp } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import "./projects.scss";
@@ -24,7 +23,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 pt-24 pb-12">
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           {getProject.map((project) => (
-            <Link to={`/projetos/${project.id}`} key={project.id}>
+            <Link to={`/projetos/${project.slug}`} key={project.id}>
               <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 transition-transform hover:scale-[1.02]">
                 <div className="relative aspect-video overflow-hidden">
                   <img
@@ -39,7 +38,9 @@ const Projects = () => {
                   <h3 className="text-xl font-semibold text-verde mb-2">
                     {project.titulo}
                   </h3>
-                  <p className="text-gray-300 text-sm mb-4">{project.desc}</p>
+                  <p className="text-gray-300 text-sm mb-4">
+                    {project.excerpt}
+                  </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.stack.map((icon, index) => (

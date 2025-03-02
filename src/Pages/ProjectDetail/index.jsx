@@ -1,14 +1,43 @@
 import { useParams, Link } from "react-router-dom";
-import { getProject } from "../../assets/texts";
+import { useState, useEffect } from "react";
 import { TbArrowBackUp } from "react-icons/tb";
 import "./projectDetail.scss";
 
 const ProjectDetail = () => {
-  const { id } = useParams();
-  const project = getProject.find((proj) => proj.id === parseInt(id));
+  const { slug } = useParams();
+  const [project, setProject] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        const response = await fetch(
+          `https://new-folio-production.up.railway.app/api/projetos?filters[slug][$eq]=${slug}&populate=image`
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        console.log("API response data:", data); // Log da resposta da API
+        if (data.data.length === 0) {
+          throw new Error("Project not found");
+        }
+        setProject(data.data[0]);
+      } catch (error) {
+        console.error("Error fetching project:", error); // Log do erro
+        setError(error.message);
+      }
+    };
+
+    fetchProject();
+  }, [slug]);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   if (!project) {
-    return <div>Projeto não encontrado</div>;
+    return <div>Carregando...</div>;
   }
 
   return (
@@ -23,7 +52,7 @@ const ProjectDetail = () => {
             <TbArrowBackUp className="text-xl" />
             <span className="text-sm font-medium">Voltar</span>
           </Link>
-          <h1 className="text-lg font-semibold text-white">{project.titulo}</h1>
+          <h1 className="text-lg font-semibold text-white">{project.title}</h1>
         </div>
       </div>
 
@@ -32,8 +61,8 @@ const ProjectDetail = () => {
         <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
           <div className="relative aspect-video overflow-hidden">
             <img
-              src={project.img}
-              alt={project.titulo}
+              src={project.image.url}
+              alt={project.title}
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -41,24 +70,24 @@ const ProjectDetail = () => {
 
           <div className="p-6">
             <h3 className="text-xl font-semibold text-verde mb-2">
-              {project.titulo}
+              {project.title}
             </h3>
-            <p className="text-gray-300 text-sm mb-4">{project.desc}</p>
+            <p className="text-gray-300 text-sm mb-4">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {project.stack.map((icon, index) => (
+              {project.stacks.map((stack, index) => (
                 <div
                   key={index}
                   className="p-2 border border-gray-700 rounded-full hover:bg-gray-800 transition-colors"
                 >
-                  {icon}
+                  {stack}
                 </div>
               ))}
             </div>
 
             <div className="flex gap-4">
               <a
-                href={project.link}
+                href={project.slug}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1"
