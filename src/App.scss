@@ -1,26 +1,21 @@
 @use "../node_modules/bulma/sass/utilities/mixins";
-$verde: #23CE99; 
+$verde: #23ce99;
 $preto: #252527;
-$branco: #D1D1D1;
+$branco: #d1d1d1;
 
 #particles canvas {
-    z-index: -100;
-   
-    width: 100%;
-    position: absolute;
+  z-index: -100;
+
+  width: 100%;
+  position: absolute;
+}
+
+@include mixins.tablet {
+  .icon:hover svg {
+    fill: $verde;
   }
 
-  
-  @include mixins.tablet { 
-
-   
-    
-    .icon:hover svg {
-        fill: $verde; 
-      }
-      
-      .icon-button.hovered .icon svg {
-        fill: $verde; 
-      }
-
+  .icon-button.hovered .icon svg {
+    fill: $verde;
   }
+}

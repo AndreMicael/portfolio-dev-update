@@ -26,9 +26,11 @@ function App() {
               element={
                 <>
                   {/* <Navbar /> */}
-                  <Home />
-                  <Tabs />
-                  <Footer />
+                  <div className="bg-slate-900">
+                    <Home />
+                    <Tabs />
+                    <Footer />
+                  </div>
                 </>
               }
             />

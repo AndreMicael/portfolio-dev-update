@@ -2,20 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-$verde: #23CE99; 
+$verde: #23ce99;
 $preto: #252527;
-$branco: #D1D1D1;
-
-
-
+$branco: #d1d1d1;
 
 body {
-  font-family: 'Inter', sans-serif !important;
-  
+  font-family: "Inter", sans-serif !important;
+
   color: $branco;
   font-weight: bolder;
-  overflow-y: auto !important;  // Garantir que o body permite rolagem
-
+  overflow-y: auto !important; // Garantir que o body permite rolagem
 }
-
-

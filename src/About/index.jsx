@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import "./about.scss";
 import { IoLogoJavascript } from "react-icons/io5";
 import { TiHtml5 } from "react-icons/ti";
@@ -21,48 +23,54 @@ import { GiRhinocerosHorn } from "react-icons/gi";
 import Portuguese from "../assets/emojis/brasil.webp";
 import English from "../assets/emojis/usa.webp";
 import { FaSquareBehance } from "react-icons/fa6";
+import ReactMarkdown from "react-markdown";
 
 const About = () => {
+  const [about, setAbout] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchUser = async () => {
+    const response = await fetch(process.env.REACT_APP_API_URL_USUARIO);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+
+    setAbout(data.data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   return (
     <div
       className="about-container container 
-    2xl:grid xl:grid 
-    lg:flex lg:flex-col sm:flex-col md:flex-col
-    
-     "
+      2xl:grid xl:grid 
+      lg:flex lg:flex-col sm:flex-col md:flex-col
+      
+       "
     >
       <div
         className=" text-about 
-        whitespace-normal  mb-5 
-        xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0
-        xl:text-lglg:text-lg sm:text-lg md:text-lg text-sm
-       "
+          whitespace-normal  mb-5 
+          xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0
+          xl:text-lglg:text-lg sm:text-lg md:text-lg text-sm
+         "
       >
         <h3 className="mb-5">Quem sou eu</h3>
-        <p>
-          Desde criança me destaco pela criatividade, e hoje, busco usar esse
-          talento para trazer soluções e ideias ao mundo, utilizando as mais
-          diversas ferramentas.{" "}
-        </p>
-
-        <p>
-          Assim que ingressei na{" "}
-          <strong>Universidade Federal de Mato Grosso</strong>, no curso de{" "}
-          <strong>Sistemas de Informação</strong>, comecei minha busca por
-          aperfeiçoamento das minhas habilidades e aprendendi novas tecnologias
-          para, enfim, realizar meu sonho de materializar ideias no mundo real.
-        </p>
-        <p>
-          No momento criativo, gosto de usar o principio KISS (Keep it Short and
-          Simple), onde viso criar interfaces e ambientes focados na{" "}
-          <strong>simplicidade e usabilidade</strong>. O segredo é evitar
-          complexidades desnecessárias, mas nunca ter medo delas.{" "}
-        </p>
-        <p>
-          Gosto de encarar cada desafio como uma oportunidade de{" "}
-          <strong>crescimento e inovação</strong>, sempre buscando a melhor
-          forma de transformar conceitos em realidades funcionais e impactantes.
-        </p>
+        {loading ? (
+          <div>Carregando...</div>
+        ) : (
+          <div>
+            {about.map((item) => (
+              <div key={item.id}>
+                <ReactMarkdown>{item.sobre}</ReactMarkdown>
+              </div>
+            ))}{" "}
+          </div>
+        )}
       </div>
 
       <div className="container  xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0">
@@ -178,8 +186,8 @@ const About = () => {
         </div>
         <div
           className="flex 
-        xl:flex-row lg:flex-row sm:flex-row md:flex-row flex-col gap-5
-        "
+          xl:flex-row lg:flex-row sm:flex-row md:flex-row flex-col gap-5
+          "
         >
           <div className="container lang">
             <h4>Idiomas</h4>

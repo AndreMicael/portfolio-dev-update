@@ -59,11 +59,12 @@ const ProjectDetail = () => {
       {/* Project Details */}
       <div className="max-w-7xl mx-auto px-4 pt-24 pb-12">
         <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
-          <div className="relative aspect-video overflow-hidden">
+          <div className="relative mt-24 flex flex-row justify-center aspect-video overflow-hidden">
             <img
+              quality="100"
               src={project.image.url}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="rounded-2xl border-[1.5px] p-3 border-slate-600 object-cover"
               loading="lazy"
             />
           </div>
@@ -84,29 +85,11 @@ const ProjectDetail = () => {
                 </div>
               ))}
             </div>
-
-            <div className="flex gap-4">
-              <a
-                href={project.slug}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1"
-              >
-                <button className="w-full px-4 py-2 bg-verde hover:bg-verde-shadow text-black font-medium rounded-lg transition-colors">
-                  Ver Demo
-                </button>
-              </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1"
-              >
-                <button className="w-full px-4 py-2 border border-verde text-verde hover:bg-verde hover:text-black font-medium rounded-lg transition-colors">
-                  GitHub
-                </button>
-              </a>
-            </div>
+            <a target="_blank" href={project.link}>
+              <button className="bg-verde hover:bg-opacity-0 hover:outline hover:outline-[1.5px] hover:text-white px-3 py-1 rounded-full text-preto">
+                Ver Demo
+              </button>
+            </a>
           </div>
         </div>
       </div>

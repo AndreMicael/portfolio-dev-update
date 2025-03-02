@@ -1,12 +1,32 @@
 import "./home.scss";
-import avatar from "../assets/webp/IMG_7153.webp";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { HomeTabsContext } from "../Contexto/HomeTabsContext";
 
 const Home = ({ onAction }) => {
   const { setHomeData } = useContext(HomeTabsContext);
+
+  const [avatar, setAvatar] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const fetchAvatar = async () => {
+    try {
+      const response = await fetch(process.env.REACT_APP_API_URL_USUARIO);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setAvatar(data.data[0].avatar);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching avatar:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAvatar();
+  }, []);
 
   const handleClick = () => {
     const data = true;
@@ -15,14 +35,16 @@ const Home = ({ onAction }) => {
 
   return (
     <div className="home-container min-h-[60vh] md:min-h-[75vh] w-full px-4 md:px-8 py-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+      <div className="max-w-7xl mx-auto flex flex-row md:flex-row items-center justify-center gap-8">
         {/* Avatar Image */}
         <div className="w-full max-w-[250px] md:w-1/3">
-          <img
-            src={avatar}
-            className="w-full h-auto rounded-2xl shadow-lg"
-            alt="Avatar"
-          />
+          {!loading && avatar && (
+            <img
+              src={avatar.formats.medium.url}
+              className="w-full contrast-125 grayscale h-auto rounded-2xl shadow-lg"
+              alt="Avatar"
+            />
+          )}
         </div>
 
         {/* Content */}
@@ -46,7 +68,7 @@ const Home = ({ onAction }) => {
 
           <button
             onClick={handleClick}
-            className="mt-6 w-full md:w-auto bg-verde hover:bg-verde-shadow text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
+            className="mt-6  md:w-auto bg-verde hover:bg-verde-shadow text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
           >
             Vamos conversar
           </button>
