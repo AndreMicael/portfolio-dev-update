@@ -13,24 +13,25 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use Node.js 20
-        uses: actions/setup-node@v2.5.2  # Escolha uma versão compatível com Node.js 20
+        uses: actions/setup-node@v2.5.2 # Escolha uma versão compatível com Node.js 20
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: 🔨 Build Project
+        env:
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+          REACT_APP_API_URL_USUARIO: ${{ secrets.REACT_APP_API_URL_USUARIO }}
         run: |
           npm install
           npm run build --prod
-    
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          local-dir: ./build/  # Ajuste este caminho para apontar para o diretório de build do seu projeto
-          server-dir: public_html/  # Diretório de destino no servidor
+          local-dir: ./build/ # Ajuste este caminho para apontar para o diretório de build do seu projeto
+          server-dir: public_html/ # Diretório de destino no servidor
           port: 21
           protocol: ftp
-          
-          

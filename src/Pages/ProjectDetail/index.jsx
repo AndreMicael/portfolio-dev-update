@@ -85,7 +85,7 @@ const ProjectDetail = () => {
                 </div>
               ))}
             </div>
-            <a target="_blank" href={project.link}>
+            <a target="_blank" rel="noreferrer" href={project.link}>
               <button className="bg-verde hover:bg-opacity-0 hover:outline hover:outline-[1.5px] hover:text-white px-3 py-1 rounded-full text-preto">
                 Ver Demo
               </button>
