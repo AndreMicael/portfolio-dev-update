@@ -24,7 +24,7 @@ const Home = ({ onAction, home, load }) => {
             avatar && (
               <img
                 src={avatar.formats.medium.url}
-                className="w-full contrast-125 h-auto rounded-2xl shadow-lg"
+                className="w-full  h-auto rounded-2xl shadow-lg"
                 alt="Avatar"
               />
             )
