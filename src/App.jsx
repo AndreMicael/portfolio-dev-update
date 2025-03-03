@@ -49,8 +49,8 @@ function App() {
               <>
                 {/* <Navbar /> */}
                 {loading ? (
-                  <div className="w-screen h-screen flex justify-center items-center">
-                    <div role="status">
+                  <div className=" flex overflow-hidden h-screen justify-center items-center">
+                    <div role="status overflow-hidden ">
                       <svg
                         aria-hidden="true"
                         class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-green-500"
@@ -67,7 +67,7 @@ function App() {
                           fill="currentFill"
                         />
                       </svg>
-                      <p className="inline mr-2"> Carregando...</p>
+                      <p className="inline mr-2"> Carregando</p>
                     </div>
                   </div>
                 ) : (
