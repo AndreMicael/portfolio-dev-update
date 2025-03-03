@@ -25,7 +25,7 @@ const ParticlesComponent = (props) => {
     () => ({
       background: {
         color: {
-          value: "#14161A",
+          value: "#0f172a",
         },
       },
       fpsLimit: 120,
@@ -37,7 +37,7 @@ const ParticlesComponent = (props) => {
           },
           onHover: {
             enable: true,
-            mode: 'grab',
+            mode: "grab",
           },
         },
         modes: {
@@ -52,7 +52,7 @@ const ParticlesComponent = (props) => {
       },
       particles: {
         color: {
-          value: "#707070",
+          value: "#23CE99",
         },
         links: {
           color: "#707070",
@@ -89,10 +89,14 @@ const ParticlesComponent = (props) => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  return (
+    <div style={{ backgroundColor: "#0f172a" }}>
+      <Particles id={props.id} init={particlesLoaded} options={options} />
+    </div>
+  );
 };
 
 export default ParticlesComponent;
