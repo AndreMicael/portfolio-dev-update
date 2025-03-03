@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { HomeTabsContext } from "../Contexto/HomeTabsContext";
 
-const Home = ({ onAction, home, load }) => {
+const Home = ({ home }) => {
   const { setHomeData } = useContext(HomeTabsContext);
   const avatar = home;
-  const loading = load;
 
   const handleClick = () => {
     const data = true;
@@ -18,16 +17,12 @@ const Home = ({ onAction, home, load }) => {
     <div className="home-container min-h-[60vh] md:min-h-[75vh] w-full px-4 md:px-8 py-12">
       <div className="max-w-7xl mx-auto flex flex-row md:flex-row items-center justify-center gap-8">
         <div className="w-full max-w-[250px] md:w-1/3">
-          {loading ? (
-            <div className=" text-white">Carregando...</div>
-          ) : (
-            avatar && (
-              <img
-                src={avatar.formats.medium.url}
-                className="w-full  h-auto rounded-2xl shadow-lg"
-                alt="Avatar"
-              />
-            )
+          {avatar && (
+            <img
+              src={avatar.formats.medium.url}
+              className="w-full h-auto rounded-2xl shadow-lg"
+              alt="Avatar"
+            />
           )}
         </div>
 
@@ -51,7 +46,7 @@ const Home = ({ onAction, home, load }) => {
 
           <button
             onClick={handleClick}
-            className="mt-6  md:w-auto bg-verde hover:bg-verde-shadow text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
+            className="mt-6 md:w-auto bg-verde hover:bg-verde-shadow text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
           >
             Vamos conversar
           </button>

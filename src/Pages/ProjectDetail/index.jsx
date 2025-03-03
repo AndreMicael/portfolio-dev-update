@@ -18,18 +18,39 @@ const ProjectDetail = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        console.log("API response data:", data); // Log da resposta da API
         if (data.data.length === 0) {
           throw new Error("Project not found");
         }
         setProject(data.data[0]);
+        localStorage.setItem(`project_${slug}`, JSON.stringify(data.data[0]));
       } catch (error) {
-        console.error("Error fetching project:", error); // Log do erro
+        console.error("Error fetching project:", error);
         setError(error.message);
       }
     };
 
-    fetchProject();
+    const cachedProject = localStorage.getItem(`project_${slug}`);
+    if (cachedProject) {
+      try {
+        setProject(JSON.parse(cachedProject));
+      } catch (error) {
+        console.error("Error parsing cached project:", error);
+        fetchProject();
+      }
+    } else {
+      fetchProject();
+    }
+
+    // Clear cache on page reload
+    const handleBeforeUnload = () => {
+      localStorage.removeItem(`project_${slug}`);
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, [slug]);
 
   if (error) {
@@ -37,7 +58,15 @@ const ProjectDetail = () => {
   }
 
   if (!project) {
-    return <div>Carregando...</div>;
+    return (
+      <div>
+        <div className="flex space-x-2 justify-center bg-slate-900 items-center h-screen dark:invert">
+          <div className="h-4 w-4 bg-verde rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+          <div className="h-4 w-4 bg-verde rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+          <div className="h-4 w-4 bg-verde rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    );
   }
 
   return (
