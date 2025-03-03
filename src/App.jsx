@@ -50,7 +50,7 @@ function App() {
                 {/* <Navbar /> */}
                 {loading ? (
                   <div className=" flex overflow-hidden h-screen justify-center items-center">
-                    <div role="status overflow-hidden ">
+                    <div className="overflow-hidden">
                       <svg
                         aria-hidden="true"
                         class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-green-500"
