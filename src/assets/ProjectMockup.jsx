@@ -2,16 +2,8 @@ import "../Projects/projects.scss";
 import { motion } from "framer-motion";
 
 const ProjectMockup = ({ project }) => {
-  const {
-    title,
-    excerpt,
-    description,
-    backend,
-    frontend,
-    image,
-
-    github,
-  } = project;
+  const { title, excerpt, description, backend, frontend, image, github } =
+    project;
 
   // Handler para abrir links
   const handleLinkClick = (url, e) => {
