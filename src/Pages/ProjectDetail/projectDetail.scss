@@ -1,5 +1,7 @@
 @use "../../variables.scss";
-
+$verde: #23ce99;
+$preto: #252527;
+$branco: #d1d1d1;
 .project-card {
   @apply relative overflow-hidden;
 
@@ -34,5 +36,82 @@
     .tech-item {
       @apply p-1.5 text-xs;
     }
+  }
+}
+
+.markdown-content {
+  // Estilos para títulos
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $verde;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.125rem;
+  }
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  // Estilos para parágrafos e listas
+  p,
+  ul,
+  ol {
+    margin-bottom: 1rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  // Estilos para links
+  a {
+    color: #7559ff; // verde
+    text-decoration: underline;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #ff4d4d;
+    }
+  }
+
+  // Estilos para blocos de código
+  pre {
+    background-color: #1e293b;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    border: 1px solid #334155;
   }
 }

@@ -1,8 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { TbArrowBackUp } from "react-icons/tb";
-import { FiExternalLink, FiGithub, FiCalendar, FiLayers } from "react-icons/fi";
+import { FiExternalLink, FiCalendar, FiLayers } from "react-icons/fi";
 import "./projectDetail.scss";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -107,12 +110,20 @@ const ProjectDetail = () => {
             {project.title}
           </h1>
           <div className="flex flex-wrap gap-3 mb-8">
-            {project.stacks.map((stack, index) => (
+            {project.frontend.map((frontend, index) => (
               <div
                 key={index}
                 className="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-full text-sm text-verde"
               >
-                {stack}
+                {frontend}
+              </div>
+            ))}
+            {project.backend.map((backend, index) => (
+              <div
+                key={index}
+                className="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-full text-sm text-verde"
+              >
+                {backend}
               </div>
             ))}
           </div>
@@ -137,26 +148,14 @@ const ProjectDetail = () => {
               <h2 className="text-2xl font-bold text-verde mb-4">
                 Sobre o projeto
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                {project.description}
-              </p>
-
-              <h3 className="text-xl font-bold text-verde mb-3">Desafios</h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Este projeto apresentou diversos desafios técnicos, incluindo
-                implementação de animações fluidas, otimização de performance e
-                gerenciamento de estado com hooks modernos do React.
-              </p>
-
-              <h3 className="text-xl font-bold text-verde mb-3">
-                Soluções implementadas
-              </h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Utilizei cache local para reduzir requisições ao servidor e
-                melhorar a experiência do usuário, implementei lazy loading para
-                componentes e imagens, e criei um design responsivo que se
-                adapta a qualquer tamanho de tela.
-              </p>
+              <div className="text-gray-300 leading-relaxed markdown-content">
+                <ReactMarkdown
+                  rehypePlugins={[rehypeRaw]}
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {project.description}
+                </ReactMarkdown>
+              </div>
             </div>
           </div>
 
@@ -170,7 +169,7 @@ const ProjectDetail = () => {
                   <FiCalendar className="text-verde" />
                   <div>
                     <p className="text-sm text-gray-400">Data do projeto</p>
-                    <p className="text-white">2023</p>
+                    <p className="text-white">{project.ano}</p>
                   </div>
                 </div>
 
@@ -178,7 +177,7 @@ const ProjectDetail = () => {
                   <FiLayers className="text-verde" />
                   <div>
                     <p className="text-sm text-gray-400">Tipo</p>
-                    <p className="text-white">Web Application</p>
+                    <p className="text-white">{project.tipo}</p>
                   </div>
                 </div>
               </div>
@@ -191,10 +190,10 @@ const ProjectDetail = () => {
                   className="flex items-center justify-center gap-2 w-full bg-verde hover:bg-verde/90 text-slate-900 font-semibold py-3 px-4 rounded-lg transition-colors"
                 >
                   <FiExternalLink />
-                  Ver demo
+                  Ver Site
                 </a>
 
-                <a
+                {/* <a
                   href={project.github || "#"}
                   target="_blank"
                   rel="noreferrer"
@@ -202,19 +201,32 @@ const ProjectDetail = () => {
                 >
                   <FiGithub />
                   Ver código fonte
-                </a>
+                </a> */}
               </div>
             </div>
 
             <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-lg">
-              <h3 className="text-xl font-bold text-verde mb-4">Tecnologias</h3>
+              <h3 className="text-xl font-bold text-verde mb-4">Front-end</h3>
               <div className="flex flex-wrap gap-2">
-                {project.stacks.map((stack, index) => (
+                {project.frontend.map((frontend, index) => (
                   <div
                     key={index}
                     className="p-3 border border-slate-700 rounded-lg hover:border-verde hover:bg-slate-700 transition-colors text-center flex-grow"
                   >
-                    {stack}
+                    {frontend}
+                  </div>
+                ))}
+              </div>
+              <h3 className="text-xl font-bold mt-4 text-verde mb-4">
+                Back-end
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.backend.map((backend, index) => (
+                  <div
+                    key={index}
+                    className="p-3 border border-slate-700 rounded-lg hover:border-verde hover:bg-slate-700 transition-colors text-center flex-grow"
+                  >
+                    {backend}
                   </div>
                 ))}
               </div>

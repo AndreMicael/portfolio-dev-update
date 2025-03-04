@@ -2,7 +2,16 @@ import "../Projects/projects.scss";
 import { motion } from "framer-motion";
 
 const ProjectMockup = ({ project }) => {
-  const { title, excerpt, description, stacks, image, link, github } = project;
+  const {
+    title,
+    excerpt,
+    description,
+    backend,
+    frontend,
+    image,
+    link,
+    github,
+  } = project;
 
   return (
     <motion.div
@@ -30,7 +39,7 @@ const ProjectMockup = ({ project }) => {
 
           {/* Badges de tecnologias visíveis apenas em mobile */}
           <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2 md:hidden">
-            {stacks.slice(0, 3).map((stack, index) => (
+            {frontend.slice(0, 3).map((stack, index) => (
               <motion.span
                 key={index}
                 className="px-2 py-1 bg-slate-800/90 backdrop-blur-sm text-verde text-xs rounded-full border border-slate-700"
@@ -41,14 +50,14 @@ const ProjectMockup = ({ project }) => {
                 {stack}
               </motion.span>
             ))}
-            {stacks.length > 3 && (
+            {frontend.length > 3 && (
               <motion.span
                 className="px-2 py-1 bg-slate-800/90 backdrop-blur-sm text-verde text-xs rounded-full border border-slate-700"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                +{stacks.length - 3}
+                +{frontend.length - 3}
               </motion.span>
             )}
           </div>
@@ -78,7 +87,20 @@ const ProjectMockup = ({ project }) => {
 
             {/* Tecnologias utilizadas - visíveis apenas em desktop */}
             <div className="hidden md:flex flex-wrap gap-2 mb-4">
-              {stacks.map((stack, index) => (
+              {frontend.map((stack, index) => (
+                <motion.span
+                  key={index}
+                  className="px-3 py-1 bg-slate-800 text-verde text-sm rounded-full border border-slate-700 hover:border-verde transition-colors"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {stack}
+                </motion.span>
+              ))}
+              {backend.map((stack, index) => (
                 <motion.span
                   key={index}
                   className="px-3 py-1 bg-slate-800 text-verde text-sm rounded-full border border-slate-700 hover:border-verde transition-colors"
