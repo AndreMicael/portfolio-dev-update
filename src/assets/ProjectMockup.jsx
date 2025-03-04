@@ -9,7 +9,7 @@ const ProjectMockup = ({ project }) => {
     backend,
     frontend,
     image,
-    link,
+
     github,
   } = project;
 
@@ -128,7 +128,14 @@ const ProjectMockup = ({ project }) => {
           {/* Botões - agora melhor posicionados e estilizados */}
           <div className="flex flex-wrap gap-3 mt-4">
             <motion.button
-              onClick={(e) => handleLinkClick(link || "#", e)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                // Navigate to project page using slug
+                window.location.href = `/projetos/${
+                  project.slug || title.toLowerCase().replace(/\s+/g, "-")
+                }`;
+              }}
               className="px-4 py-2 bg-verde hover:bg-verde/90 transition-colors text-slate-900 font-medium rounded-lg flex items-center gap-2 text-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
