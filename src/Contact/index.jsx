@@ -1,114 +1,257 @@
-import './contact.scss';
-import { MdAlternateEmail } from "react-icons/md";
-import { FaUserCircle } from "react-icons/fa";
-import { FaExternalLinkAlt ,FaLinkedin ,FaCopy } from "react-icons/fa";
-import { toast} from 'react-toastify';
-import { MdEmail } from "react-icons/md";
-
-
-
-
+import "./contact.scss";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MdAlternateEmail, MdEmail, MdSend } from "react-icons/md";
+import { FaUserCircle, FaLinkedin, FaCopy, FaWhatsapp } from "react-icons/fa";
+import { RiMailSendLine } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    setIsSubmitting(true);
+    // Form will be submitted normally by the browser
+    // Reset submitting state after a delay to simulate completion
+    setTimeout(() => {
+      setIsSubmitting(false);
+    }, 3000);
+  };
+
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText('contato@andremicael.com');
-      toast('E-mail copiado com sucesso!');
+      await navigator.clipboard.writeText("contato@andremicael.com");
+      toast.success("E-mail copiado com sucesso!", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     } catch (err) {
-      toast('Falha ao copiar', err);
+      toast.error("Falha ao copiar", {
+        position: "bottom-right",
+        autoClose: 2000,
+      });
     }
   };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
   return (
-    <div className='contact-container
-    
-    '>
-    <div className=" mx-auto mb-4  contact-title  
-   
-    ">
+    <motion.div
+      className="bg-slate-900 py-6 px-4 rounded-lg"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.div className="max-w-3xl mx-auto mb-6" variants={itemVariants}>
+        <motion.h2
+          className="text-2xl md:text-3xl font-bold text-center text-verde mb-3"
+          variants={itemVariants}
+        >
+          Vamos conversar!
+        </motion.h2>
 
-    <div className='text-center 
-   font-bold  xl:text-2xl lg:text-xl md:text-2xl sm:text-2xl xs:text-lg text-white
-    '> Vamos conversar !</div>
-    <p className=' mx-auto xl:w-[45vw] lg:w-[50vw] md:w-[70vw] sm:w-[70vw] xs:w-[70vw] 
-     xl:text-lg lg:text-lg md:text-lg sm:text-lg xs:text-sm p-2 text-center '>
-     Está a fim de começar um novo projeto web, mas não sabe por onde começar? 
-     Vamos conversar! Preencha o formulário abaixo ou entre em contato através de outros canais disponíveis.
-    </p>
+        <motion.p
+          className="mx-auto text-sm md:text-base text-gray-300 max-w-xl text-center"
+          variants={itemVariants}
+        >
+          Preencha o formulário abaixo ou entre em contato através de outros
+          canais disponíveis.
+        </motion.p>
+      </motion.div>
 
-    </div>
-   
-<form action="https://formsubmit.co/28c62ad0dad617f90462e93da84f5d8f" method="POST" className="min-w-[25vw] mx-auto flex flex-col gap-4  
-xl:w-[30vw] lg:w-[40vw] md:w-[50vw] sm:w-[60vw] xs:w-[70vw]  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500
-">
-  
- 
-  <div className="flex">
-    <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-    <FaUserCircle />
-    </span>
-    <input  type="text" name="name" id="name" className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block 
-    flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-     placeholder="José Pereira"/>
-    
-  </div>
+      <div className="max-w-3xl mx-auto space-y-6">
+        <motion.div variants={itemVariants}>
+          <h3 className="text-lg font-semibold text-white mb-4">
+            Envie uma mensagem
+          </h3>
 
-  <div className="flex">
-    <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-    <MdAlternateEmail />
-    </span>
-    <input type="email" id="email" name="email" className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block 
-    flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-     placeholder="josepereira@email.com"/>
-    
-  </div>
+          <form
+            action="https://formsubmit.co/28c62ad0dad617f90462e93da84f5d8f"
+            method="POST"
+            className="space-y-4"
+            onSubmit={handleSubmit}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <FaUserCircle className="text-verde text-sm" />
+                </div>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg block w-full pl-9 p-2.5 focus:ring-verde focus:border-verde"
+                  placeholder="Nome completo"
+                  required
+                />
+              </div>
 
- 
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <MdAlternateEmail className="text-verde text-sm" />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg block w-full pl-9 p-2.5 focus:ring-verde focus:border-verde"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </div>
+            </div>
 
-<textarea required id="message" rows="4" name="message"  className="form-control block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 m-0
- dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escreva sua mensagem aqui..."></textarea>
-<button  type="submit" className="focus:outline-none text-preto bg-verde hover:bg-verde-shadow focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-5 py-2.5  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Enviar</button>
-{/* <input type="hidden" name="_next" value=''/> Inserir página de voltar*/} 
-<div> 
-  <h4 className='text-center text-md font-medium mx-auto xl:w-[30vw] lg:w-[40vw] md:w-[50vw] sm:w-[60vw] xs:w-[70vw]   '>Outros canais disponíveis</h4>
-  <div className=" flex 
-  xl:flex-row lg:flex-row  md:flex-row sm:flex-col xs:flex-col
-  justify-center gap-x-4 ">
-  <a href="https://www.linkedin.com/in/andremsampaio" target="blank"> <div className="item justify-center  mb-3 flex gap-1 items-baseline"><div className="icon text-2xl text-blue-500 self-start"><FaLinkedin /></div><p className="text-cinza text-md">Linkedin</p> 
-  
-  
-  
-  <button data-tooltip-target="tooltip-animation" type="button" class=" text-cinza hover:text-blue-500  text-center"><FaExternalLinkAlt /></button>
-  <div id="tooltip-animation" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-    Abrir Linkedin
-    <div class="tooltip-arrow" data-popper-arrow></div>
-</div>
-  
-  </div></a> 
- <div className="item justify-center mb-3 flex gap-1 items-baseline"><div className="icon text-2xl text-rosa self-start"><MdEmail /></div><p className="text-cinza text-md">contato@andremicael.com</p> 
- 
- <button onClick={copyToClipboard} data-tooltip-target="tooltip-dark" type="button" class=" text-cinza hover:text-blue-500  text-center"><FaCopy/></button>
+            <div className="relative">
+              <textarea
+                id="message"
+                rows="4"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg block w-full p-2.5 focus:ring-verde focus:border-verde"
+                placeholder="Escreva sua mensagem aqui..."
+                required
+              ></textarea>
+            </div>
 
-<div id="tooltip-dark" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-    Copiar E-mail
-    <div class="tooltip-arrow" data-popper-arrow></div>
-</div>
- 
+            <motion.button
+              type="submit"
+              className="w-full bg-verde hover:bg-verde-shadow text-black font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center gap-2 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>Enviando...</>
+              ) : (
+                <>
+                  <MdSend className="text-base" /> Enviar mensagem
+                </>
+              )}
+            </motion.button>
 
- 
- 
-  </div> 
- 
- 
- 
- 
-  </div>
-</div>
-</form>
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nova mensagem do portfólio!"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+          </form>
+        </motion.div>
 
+        {/* Contact Channels */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+          variants={containerVariants}
+        >
+          <motion.a
+            href="https://www.linkedin.com/in/andremsampaio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700 hover:border-verde transition-all group"
+            whileHover={{ scale: 1.02 }}
+            variants={itemVariants}
+          >
+            <div className="w-8 h-8 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+              <FaLinkedin className="text-blue-500" />
+            </div>
+            <div className="flex-grow">
+              <h4 className="text-white text-sm font-medium">LinkedIn</h4>
+              <p className="text-xs text-gray-400">Conecte-se</p>
+            </div>
+          </motion.a>
 
+          <motion.div
+            className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700 group cursor-pointer"
+            onClick={copyToClipboard}
+            whileHover={{ scale: 1.02 }}
+            variants={itemVariants}
+          >
+            <div className="w-8 h-8 rounded-full bg-pink-900/30 flex items-center justify-center flex-shrink-0">
+              <MdEmail className="text-pink-500" />
+            </div>
+            <div className="flex-grow">
+              <h4 className="text-white text-sm font-medium">E-mail</h4>
+              <p className="text-xs text-gray-400">contato@andremicael.com</p>
+            </div>
+            <FaCopy className="text-gray-400 group-hover:text-verde text-xs" />
+          </motion.div>
 
-    </div>
-  )
-}
+          <motion.a
+            href="https://wa.me/5511900000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700 hover:border-verde transition-all group"
+            whileHover={{ scale: 1.02 }}
+            variants={itemVariants}
+          >
+            <div className="w-8 h-8 rounded-full bg-green-900/30 flex items-center justify-center flex-shrink-0">
+              <FaWhatsapp className="text-green-500" />
+            </div>
+            <div className="flex-grow">
+              <h4 className="text-white text-sm font-medium">WhatsApp</h4>
+              <p className="text-xs text-gray-400">Resposta rápida</p>
+            </div>
+          </motion.a>
+        </motion.div>
 
-export default Contact
+        {/* Response Time Info */}
+        <motion.div
+          className="bg-slate-800 p-4 rounded-lg border border-slate-700 shadow-md"
+          variants={itemVariants}
+        >
+          <div className="flex items-center gap-4">
+            <div className="bg-slate-700/50 p-2 rounded-full">
+              <RiMailSendLine className="text-verde text-xl" />
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-white">
+                Tempo de resposta
+              </h3>
+              <p className="text-xs text-gray-400">
+                Geralmente respondo em até 24 horas em dias úteis
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Contact;

@@ -1,57 +1,50 @@
+// @use '../variables.scss';
+// @use "../../node_modules/bulma/sass/utilities/mixins";
 
-@use '../variables.scss';
-@use "../../node_modules/bulma/sass/utilities/mixins";
+// nav {
+//     border: 1px solid #dedede;
+//     border-radius: 100px;
+//     margin: 0 auto;
 
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     background-color: rgba($color: #000, $alpha: 0.2);
 
-nav {
-    border: 1px solid #dedede;      
-    border-radius: 100px;
-    margin: 0 auto;    
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba($color: #000, $alpha: 0.2);
+//     .brand {
 
-    .brand {
-        
-        cursor: pointer;
-      
-       
+//         cursor: pointer;
 
-        img {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            
-        }
+//         img {
+//             margin: 0;
+//             padding: 0;
+//             box-sizing: border-box;
 
-        .logo-img{
-            animation: esconder 2s ;
-        }
-        .text-animation {
-            animation: esconder2 2s ;
-            
-        }
+//         }
 
-      
+//         .logo-img{
+//             animation: esconder 2s ;
+//         }
+//         .text-animation {
+//             animation: esconder2 2s ;
 
-        @keyframes esconder {
-            0% {
-              transform: translateY(0%);
-            }
-            50% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0%);
-            }
-          }
+//         }
 
-          
-    }
+//         @keyframes esconder {
+//             0% {
+//               transform: translateY(0%);
+//             }
+//             50% {
+//                 transform: translateY(100%);
+//             }
+//             100% {
+//                 transform: translateY(0%);
+//             }
+//           }
 
-    .botao {
-    
-    }
-}
+//     }
+
+//     .botao {
+
+//     }
+// }

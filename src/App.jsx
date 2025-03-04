@@ -10,7 +10,7 @@ import "bulma/css/bulma.css";
 const Projects = React.lazy(() => import("./Pages/Projects"));
 const ProjectDetail = React.lazy(() => import("./Pages/ProjectDetail"));
 const Home = React.lazy(() => import("./Home"));
-// const Navbar = React.lazy(() => import("./Navbar/Navbar"));
+const Navbar = React.lazy(() => import("./Navbar/Navbar"));
 const Tabs = React.lazy(() => import("./components/tabs/Tabs"));
 const Footer = React.lazy(() => import("./Footer"));
 
@@ -67,6 +67,7 @@ function App() {
                 ) : (
                   <div>
                     <ParticlesComponent id="particles" />
+                    <Navbar />
                     <Home home={avatar} />
                     <Tabs />
                     <Footer />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { motion } from "framer-motion";
 import "./about.scss";
 import { IoLogoJavascript } from "react-icons/io5";
 import { TiHtml5 } from "react-icons/ti";
@@ -7,10 +7,8 @@ import { IoLogoCss3 } from "react-icons/io";
 import { FaReact, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaGears } from "react-icons/fa6";
-
 import { FaNodeJs } from "react-icons/fa";
 import { SiPrisma } from "react-icons/si";
-// import { BiLogoPostgresql,BiLogoSpringBoot } from "react-icons/bi";
 import { FiFigma } from "react-icons/fi";
 import { FaDatabase } from "react-icons/fa6";
 import {
@@ -18,7 +16,6 @@ import {
   SiAdobephotoshop,
   SiBlender,
 } from "react-icons/si";
-
 import { GiRhinocerosHorn } from "react-icons/gi";
 import Portuguese from "../assets/emojis/brasil.webp";
 import English from "../assets/emojis/usa.webp";
@@ -30,212 +27,277 @@ const About = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchUser = async () => {
-    const response = await fetch(process.env.REACT_APP_API_URL_USUARIO);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
+    try {
+      const response = await fetch(process.env.REACT_APP_API_URL_USUARIO);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setAbout(data.data);
+      localStorage.setItem("about", JSON.stringify(data.data));
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
     }
-    const data = await response.json();
-
-    setAbout(data.data);
-    setLoading(false);
   };
 
   useEffect(() => {
-    fetchUser();
+    const cachedAbout = localStorage.getItem("about");
+    if (cachedAbout) {
+      try {
+        setAbout(JSON.parse(cachedAbout));
+        setLoading(false);
+      } catch (error) {
+        console.error("Error parsing cached about:", error);
+        fetchUser();
+      }
+    } else {
+      fetchUser();
+    }
+
+    // Clear cache on page reload
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("about");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []);
 
+  // Animation variants for staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
+  const skillCategories = [
+    {
+      title: "Front-End",
+      skills: [
+        { name: "HTML5", icon: <TiHtml5 className="text-orange-500" /> },
+        { name: "CSS3", icon: <IoLogoCss3 className="text-blue-500" /> },
+        {
+          name: "Javascript",
+          icon: <IoLogoJavascript className="text-yellow-400" />,
+        },
+        { name: "React.js", icon: <FaReact className="text-cyan-400" /> },
+        { name: "Next.js", icon: <RiNextjsFill className="text-white" /> },
+        { name: "GitHub", icon: <FaGithub className="text-violet-700" /> },
+        {
+          name: "Tailwind",
+          icon: <RiTailwindCssFill className="text-cyan-500" />,
+        },
+      ],
+    },
+    {
+      title: "Back-End",
+      skills: [
+        { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+        {
+          name: "Banco de Dados",
+          icon: <FaDatabase className="text-blue-400" />,
+        },
+        { name: "Prisma ORM", icon: <SiPrisma className="text-teal-500" /> },
+        { name: "Rest API", icon: <FaGears className="text-gray-400" /> },
+      ],
+    },
+    {
+      title: "Design",
+      skills: [
+        { name: "Figma", icon: <FiFigma className="text-purple-400" /> },
+        {
+          name: "Illustrator",
+          icon: <SiAdobeillustrator className="text-orange-600" />,
+        },
+        {
+          name: "Photoshop",
+          icon: <SiAdobephotoshop className="text-blue-600" />,
+        },
+        { name: "Blender", icon: <SiBlender className="text-orange-500" /> },
+        {
+          name: "Rhinoceros",
+          icon: <GiRhinocerosHorn className="text-gray-500" />,
+        },
+      ],
+    },
+  ];
+
   return (
-    <div
-      className="about-container container 
-      2xl:grid xl:grid 
-      lg:flex lg:flex-col sm:flex-col md:flex-col
-      
-       "
-    >
-      <div
-        className=" text-about 
-          whitespace-normal  mb-5 
-          xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0
-          xl:text-lglg:text-lg sm:text-lg md:text-lg text-sm
-         "
+    <div className="  pb-6 ">
+      {/* About Me Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-slate-800 rounded-xl p-5 mb-6 border border-slate-700 shadow-md"
       >
-        <h3 className="mb-5">Quem sou eu</h3>
+        <h2 className="text-2xl font-bold text-verde mb-4">Quem sou eu</h2>
+
         {loading ? (
-          <div>Carregando...</div>
+          <div className="flex space-x-2 justify-center items-center py-6">
+            <div className="h-3 w-3 bg-verde rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+            <div className="h-3 w-3 bg-verde rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+            <div className="h-3 w-3 bg-verde rounded-full animate-bounce"></div>
+          </div>
         ) : (
-          <div>
+          <div className="text-gray-300 leading-relaxed">
             {about.map((item) => (
-              <div key={item.id}>
+              <div
+                key={item.id}
+                className="prose prose-sm prose-invert max-w-none"
+              >
                 <ReactMarkdown>{item.sobre}</ReactMarkdown>
               </div>
-            ))}{" "}
+            ))}
           </div>
         )}
-      </div>
+      </motion.div>
 
-      <div className="container  xl:px-10 lg:px-10 sm:px-10 md:px-10 px-0">
-        <h3 className="mb-5">Minhas Habilidades</h3>
-        <div className="grid">
-          <div className="skill">
-            <h4>Front-End</h4>
-            <div className="item">
-              <div className="icon">
-                <TiHtml5 />
-              </div>
-              <p>HTML5</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <IoLogoCss3 />
-              </div>
-              <p>CSS3</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <IoLogoJavascript />
-              </div>
-              <p>Javascript</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <FaReact />
-              </div>
-              <p>React.js</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <RiNextjsFill />
-              </div>
-              <p>Next.js</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <FaGithub />
-              </div>
-              <p>GitHub</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <RiTailwindCssFill />
-              </div>
-              <p>Tailwind</p>
-            </div>
-          </div>
+      {/* Skills Section - More compact grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="bg-slate-800 rounded-xl p-5 mb-6 border border-slate-700 shadow-md"
+      >
+        <h2 className="text-2xl font-bold text-verde mb-4">Habilidades</h2>
 
-          <div className="skill">
-            <h4>Back-End</h4>
-            <div className="item">
-              <div className="icon">
-                <FaNodeJs />
+        <div className="space-y-6">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={index}
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              className="bg-slate-900/50 rounded-lg p-4 border border-slate-700"
+            >
+              <h3 className="text-lg font-semibold text-white mb-3">
+                {category.title}
+              </h3>
+              <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-3">
+                {category.skills.map((skill, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={itemVariants}
+                    className="flex flex-col items-center justify-center bg-slate-800 rounded-md p-2 border border-slate-700 hover:border-verde transition-all"
+                    whileHover={{ scale: 1.03 }}
+                  >
+                    <div className="text-2xl mb-1 text-verde">{skill.icon}</div>
+                    <p className="text-xs text-gray-300 text-center">
+                      {skill.name}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-              <p>Node.js</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <FaDatabase />
-              </div>
-              <p>Banco de Dados</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <SiPrisma />
-              </div>
-              <p>Prisma ORM</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <FaGears />
-              </div>
-              <p>Rest API</p>
-            </div>
-          </div>
-
-          <div className="skill">
-            <h4>Design</h4>
-            <div className="item">
-              <div className="icon">
-                <FiFigma />
-              </div>
-              <p>Figma</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <SiAdobeillustrator />
-              </div>
-              <p>Illustrator</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <SiAdobephotoshop />
-              </div>
-              <p>Photoshop</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <SiBlender />
-              </div>
-              <p>Blender</p>
-            </div>
-            <div className="item">
-              <div className="icon">
-                <GiRhinocerosHorn />
-              </div>
-              <p>Rhinoceros</p>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
-        <div
-          className="flex 
-          xl:flex-row lg:flex-row sm:flex-row md:flex-row flex-col gap-5
-          "
+      </motion.div>
+
+      {/* Additional Information - Side by side in a compact layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Languages */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-slate-800 rounded-xl p-5 border border-slate-700 shadow-md"
         >
-          <div className="container lang">
-            <h4>Idiomas</h4>
-            <div className="">
-              <div className="item flex gap-2 items-baseline ">
-                <div className="icon self-start">
-                  <img src={English} alt="Inglês" />
-                </div>
-                <p>Inglês</p>
-                <h6 className="">Speaking, Listening e Writing Avançado</h6>
+          <h3 className="text-xl font-bold text-verde mb-3">Idiomas</h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700">
+              <div className="w-8 h-8 overflow-hidden rounded-full flex-shrink-0">
+                <img
+                  src={English}
+                  alt="Inglês"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="item flex gap-2 items-baseline ">
-                <div className="icon self-start">
-                  <img src={Portuguese} alt="Portugues" />
-                </div>
-                <p>Português</p>
-                <h6>Nativo</h6>
+              <div>
+                <h4 className="text-base font-medium text-white">Inglês</h4>
+                <p className="text-xs text-gray-400">
+                  Speaking, Listening e Writing Avançado
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700">
+              <div className="w-8 h-8 overflow-hidden rounded-full flex-shrink-0">
+                <img
+                  src={Portuguese}
+                  alt="Português"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 className="text-base font-medium text-white">Português</h4>
+                <p className="text-xs text-gray-400">Nativo</p>
               </div>
             </div>
           </div>
+        </motion.div>
 
-          <div className="container ports">
-            <h4>Repositórios</h4>
-            <a href="https://github.com/AndreMicael" target="blank">
-              <div className="item  mb-3 flex gap-2 items-baseline">
-                <div className="icon text-purple-500 self-start">
+        {/* Repositories */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-slate-800 rounded-xl p-5 border border-slate-700 shadow-md"
+        >
+          <h3 className="text-xl font-bold text-verde mb-3">Repositórios</h3>
+          <div className="space-y-3">
+            <a
+              href="https://github.com/AndreMicael"
+              target="blank"
+              className="block"
+            >
+              <div className="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700 hover:border-verde transition-all duration-300">
+                <div className="w-8 h-8 bg-slate-700 rounded-md flex items-center justify-center text-purple-500 text-xl">
                   <FaGithub />
-                </div>{" "}
-                <p className="text-cinza">GitHub</p>{" "}
-                <p className="text-cinza hover:text-blue-500">
-                  <FaExternalLinkAlt />{" "}
-                </p>{" "}
+                </div>
+                <div className="flex-grow">
+                  <h4 className="text-base font-medium text-white">GitHub</h4>
+                  <p className="text-xs text-gray-400">
+                    Veja meus projetos e contribuições
+                  </p>
+                </div>
+                <FaExternalLinkAlt className="text-verde text-sm" />
               </div>
             </a>
-            <a href="https://www.behance.net/andremicael" target="blank">
-              {" "}
-              <div className="item  mb-3 flex gap-2 items-baseline">
-                <div className="icon text-blue-500 self-start">
+
+            <a
+              href="https://www.behance.net/andremicael"
+              target="blank"
+              className="block"
+            >
+              <div className="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700 hover:border-verde transition-all duration-300">
+                <div className="w-8 h-8 bg-slate-700 rounded-md flex items-center justify-center text-blue-500 text-xl">
                   <FaSquareBehance />
                 </div>
-                <p className="text-cinza">Behance</p>{" "}
-                <p className="text-cinza hover:text-blue-500">
-                  <FaExternalLinkAlt />{" "}
-                </p>{" "}
+                <div className="flex-grow">
+                  <h4 className="text-base font-medium text-white">Behance</h4>
+                  <p className="text-xs text-gray-400">
+                    Explore meus trabalhos de design
+                  </p>
+                </div>
+                <FaExternalLinkAlt className="text-verde text-sm" />
               </div>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
