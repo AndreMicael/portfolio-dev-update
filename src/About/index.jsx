@@ -5,6 +5,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { TiHtml5 } from "react-icons/ti";
 import { IoLogoCss3 } from "react-icons/io";
 import { FaReact, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { HiMapPin } from "react-icons/hi2";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaGears } from "react-icons/fa6";
 import { FaNodeJs } from "react-icons/fa";
@@ -157,13 +158,45 @@ const About = () => {
             {about.map((item) => (
               <div
                 key={item.id}
-                className="prose prose-sm prose-invert max-w-none"
+                className="prose   prose-sm prose-invert max-w-none"
               >
                 <ReactMarkdown>{item.sobre}</ReactMarkdown>
               </div>
             ))}
           </div>
         )}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-slate-800 rounded-xl p-5 mb-6 border border-slate-700 shadow-md"
+      >
+        {" "}
+        <h2 className="text-2xl font-bold text-verde mb-4">Educação</h2>
+        <div className="text-sm   mx-auto md:text-base lg:text-[15px] xl:text-[16px] 2xl:text-[17px]">
+          <div className="border-l-2 px-6 lg:px-8 xl:px-12">
+            <div className="flex   justify-between">
+              <p className="flex items-center">
+                <HiMapPin size={16} className="mr-2" />
+                Cuiabá, MT
+              </p>
+              <p>2022-2026</p>
+            </div>
+            <p className="mt-2 font-semibold   text-base md:text-lg lg:text-[17px] xl:text-[18px]">
+              Bacharelado em Sistemas de Informação
+            </p>
+            <p className="text-slate-500">
+              Universidade Federal de Mato Grosso
+            </p>
+            <p className=" mt-4">
+              Focado em desenvolvimento de sistemas, banco de dados, engenharia
+              de software, inteligência artificial, segurança da informação e
+              gestão de projetos.
+            </p>
+          </div>
+        </div>
       </motion.div>
 
       {/* Skills Section - More compact grid */}
