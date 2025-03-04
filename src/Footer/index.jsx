@@ -2,6 +2,8 @@
 import logo from "../assets/tabfolio.svg";
 
 const Footer = () => {
+  const data = Date.now();
+  const year = new Date(data).getFullYear();
   return (
     <footer className="bg-slate-950 w-full p-4 mt-16 overflow-hidden">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
@@ -25,7 +27,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="text-center">
           <span className="text-sm sm:text-base">
-            © 2024{" "}
+            © {year}{" "}
             <a href="/" className="text-[#23CE99] hover:underline">
               André Micael Sampaio
             </a>
