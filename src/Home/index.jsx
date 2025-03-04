@@ -79,7 +79,7 @@ const Home = ({ home }) => {
             </motion.button>
 
             <motion.a
-              href="#projects"
+              href="/projetos"
               className="bg-transparent border border-slate-700 hover:border-verde text-white font-bold py-3 px-8 rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
