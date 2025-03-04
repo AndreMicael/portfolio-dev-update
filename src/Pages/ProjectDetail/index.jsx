@@ -46,8 +46,15 @@ const ProjectDetail = () => {
     }
 
     // Clear cache on page reload
+    const handleBeforeUnload = () => {
+      localStorage.removeItem(`project_${slug}`);
+    };
 
-    return () => {};
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, [slug]);
 
   if (error) {
