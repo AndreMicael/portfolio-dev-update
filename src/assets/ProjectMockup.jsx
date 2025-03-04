@@ -1,9 +1,18 @@
 import "../Projects/projects.scss";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const ProjectMockup = ({ project }) => {
-  const { title, excerpt, description, backend, frontend, image, github } =
-    project;
+  const {
+    title,
+    excerpt,
+    description,
+    backend,
+    slug,
+    frontend,
+    image,
+    github,
+  } = project;
 
   // Handler para abrir links
   const handleLinkClick = (url, e) => {
@@ -119,21 +128,15 @@ const ProjectMockup = ({ project }) => {
 
           {/* Botões - agora melhor posicionados e estilizados */}
           <div className="flex flex-wrap gap-3 mt-4">
-            <motion.button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                // Navigate to project page using slug
-                window.location.href = `/projetos/${
-                  project.slug || title.toLowerCase().replace(/\s+/g, "-")
-                }`;
-              }}
-              className="px-4 py-2 bg-verde hover:bg-verde/90 transition-colors text-slate-900 font-medium rounded-lg flex items-center gap-2 text-sm"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Ver projeto
-            </motion.button>
+            <Link to={`/projetos/${slug}`} key={project.id}>
+              <motion.button
+                className="px-4 py-2 bg-verde hover:bg-verde/90 transition-colors text-slate-900 font-medium rounded-lg flex items-center gap-2 text-sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Ver projeto
+              </motion.button>
+            </Link>
             {github && (
               <motion.button
                 onClick={(e) => handleLinkClick(github, e)}
