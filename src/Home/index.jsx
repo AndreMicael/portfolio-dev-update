@@ -100,7 +100,7 @@ const Home = ({ home }) => {
               <FaGithub className="text-lg" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/seu-linkedin"
+              href="https://www.linkedin.com/in/andremsampaio"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white hover:text-verde hover:border-verde transition-all duration-300"
