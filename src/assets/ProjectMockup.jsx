@@ -13,6 +13,15 @@ const ProjectMockup = ({ project }) => {
     github,
   } = project;
 
+  // Handler para abrir links
+  const handleLinkClick = (url, e) => {
+    e.preventDefault();
+    e.stopPropagation(); // Impede que o evento propague para links pai
+    if (url && url !== "#") {
+      window.open(url, "_blank", "noopener noreferrer");
+    }
+  };
+
   return (
     <motion.div
       className="border-b border-slate-700 pb-8 mb-8"
@@ -118,27 +127,23 @@ const ProjectMockup = ({ project }) => {
 
           {/* Botões - agora melhor posicionados e estilizados */}
           <div className="flex flex-wrap gap-3 mt-4">
-            <motion.a
-              href={link || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={(e) => handleLinkClick(link || "#", e)}
               className="px-4 py-2 bg-verde hover:bg-verde/90 transition-colors text-slate-900 font-medium rounded-lg flex items-center gap-2 text-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Ver projeto
-            </motion.a>
+            </motion.button>
             {github && (
-              <motion.a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                onClick={(e) => handleLinkClick(github, e)}
                 className="px-4 py-2 bg-transparent hover:bg-slate-800 border border-slate-700 text-white transition-colors rounded-lg flex items-center gap-2 text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Ver código
-              </motion.a>
+              </motion.button>
             )}
           </div>
         </div>
