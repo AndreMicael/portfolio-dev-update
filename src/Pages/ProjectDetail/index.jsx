@@ -15,7 +15,12 @@ const ProjectDetail = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const response = await fetch(process.env.REACT_APP_API_URL_IMAGEM);
+        const baseUrl = process.env.REACT_APP_API_BASE_URL || " ";
+        const url = `${baseUrl}/api/projetos?filters[slug][$eq]=${encodeURIComponent(
+          slug
+        )}&populate=image`;
+
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
