@@ -62,10 +62,10 @@ const Home = ({ home }) => {
             <span className="text-verde">Developer</span> & Designer.
           </h1>
 
-          <p className="mt-4 text-sm md:text-base xl:text-lg text-gray-300 max-w-[600px] leading-relaxed">
-            Minha missão é criar sites e sistemas que unam visual impactante com
-            alta funcionalidade. Transformando ideias em experiências digitais
-            memoráveis.
+          <p className="mt-4 text-sm font-normal md:text-base xl:text-lg text-gray-300 max-w-[600px] leading-relaxed">
+            Minha missão é desenvolver sites e sistemas que combinam design
+            visual impactante com alta performance, usabilidade e
+            escalabilidade.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
