@@ -21,6 +21,7 @@ jobs:
         env:
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
           REACT_APP_API_URL_USUARIO: ${{ secrets.REACT_APP_API_URL_USUARIO }}
+          REACT_APP_API_URL_IMAGEM: ${{ secrets.REACT_APP_API_URL_IMAGEM }}
         run: |
           npm install
           npm run build --prod
