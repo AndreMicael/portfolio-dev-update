@@ -40,6 +40,11 @@ $branco: #d1d1d1;
 }
 
 .markdown-content {
+  img {
+    border-radius: 15px;
+    border: 1px solid #334155;
+    padding: 8px;
+  }
   // Estilos para títulos
   h1,
   h2,
