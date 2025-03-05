@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { HomeTabsContext } from "../Contexto/HomeTabsContext";
 import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa";
+import Resume from "../assets/pdf/Andre_Sampaio_Desenvolvedor_Fullstack.pdf";
 
 const Home = ({ home }) => {
   const { setHomeData } = useContext(HomeTabsContext);
@@ -13,6 +14,13 @@ const Home = ({ home }) => {
   const handleClick = () => {
     const data = true;
     setHomeData(data);
+  };
+
+  const handleDownload = (file) => {
+    const link = document.createElement("a");
+    link.href = file;
+    link.download = file.split("/").pop();
+    link.click();
   };
 
   // Animation variants
@@ -75,16 +83,25 @@ const Home = ({ home }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              Vamos conversar
+              Contato
             </motion.button>
 
-            <motion.a
+            {/* <motion.a
               href="/projetos"
               className="bg-transparent border border-slate-700 hover:border-verde text-white font-bold py-3 px-8 rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
               Ver projetos
+            </motion.a> */}
+
+            <motion.a
+              onClick={() => handleDownload(Resume)}
+              className="bg-transparent border border-slate-700 hover:border-verde text-white font-bold py-3 px-8 rounded-lg transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Currículo
             </motion.a>
           </div>
 
