@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.scss";
 import "bulma/css/bulma.css";
+
 const Projects = React.lazy(() => import("./Pages/Projects"));
 const ProjectDetail = React.lazy(() => import("./Pages/ProjectDetail"));
 const Home = React.lazy(() => import("./Home"));
