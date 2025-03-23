@@ -78,11 +78,13 @@ const Projects = () => {
       ) : (
         <div className="mockups">
           <div className="slider flex flex-col gap-8">
-            {projects.map((project) => (
-              <Link to={`/projetos/${project.slug}`} key={project.id}>
-                <ProjectMockup project={project} />
-              </Link>
-            ))}
+            {[...projects]
+              .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+              .map((project) => (
+                <Link to={`/projetos/${project.slug}`} key={project.id}>
+                  <ProjectMockup project={project} />
+                </Link>
+              ))}
           </div>
         </div>
       )}
